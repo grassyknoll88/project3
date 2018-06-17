@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+// import "./App.css";
+// import Nav from "./components/Nav/Nav";
+// import DogCards from "./components/DogCards/DogCards";
+import HeroPic from "./components/HeroPic/HeroPic";
+import JoinButton from "./components/JoinButton/JoinButton";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <HeroPic backgroundImage="https://ibb.co/b1wAkJ">
+    <h1>PupLife</h1>
+    <h2>Does your pup need some new friends? You came to the right place!</h2>
+    <JoinButton />
+  </HeroPic>
+);
 
 export default App;
