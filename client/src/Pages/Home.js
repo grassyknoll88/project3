@@ -5,7 +5,6 @@ import JoinButton from "../components/JoinButton/JoinButton";
 import picture from "../assets/dogs.jpg";
 import Nav from "../components/Nav/Nav";
 import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
-import ImageUpload from "../components/ImageUpload/ImageUpload";
 
 const Home = () => (
   // <Container>
