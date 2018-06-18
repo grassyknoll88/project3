@@ -14,10 +14,9 @@ const Home = () => (
       <div className="col-12">
         <Nav />
         <HeroPic backgroundImage={picture}>
-          <h1>PupLife</h1>
-          <h2>
-            Does your pup need some new friends? You came to the right place!
-          </h2>
+          <h1 className="title">PupLife</h1>
+          <h2 className="description">Does your pup need some new friends?</h2>
+          <h3 className="description">You came to the right place!</h3>
           <JoinButton />
         </HeroPic>
       </div>
