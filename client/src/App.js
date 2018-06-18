@@ -10,7 +10,6 @@ import SearchDash from "./Pages/SearchDash";
 const App = () => (
   <Router>
     <div>
-      <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/profile" component={Profile} />
