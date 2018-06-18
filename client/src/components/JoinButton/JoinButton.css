@@ -1,8 +1,12 @@
 button {
-  height: 100px;
-  width: 200px;
+  height: 10rem;
+  width: 20rem;
   background-color: #f7882f;
   color: white;
-  margin-top: 230px;
-  margin-left: 30px;
+  margin-top: 30rem;
+  margin-left: 20rem;
+}
+
+.btn {
+  font-size: 3rem;
 }
