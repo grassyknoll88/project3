@@ -1,8 +1,10 @@
 import React from "react";
 import "./JoinButton.css";
 
-const JoinBtn = props => (
-  <button onClick={props.onClick} className={"btn-primary"} />
+const JoinButton = props => (
+  <button onClick={props.onClick} className={"btn-primary"}>
+    JOIN TODAY
+  </button>
 );
 
-export default JoinBtn;
+export default JoinButton;

@@ -5,21 +5,7 @@ import Nav from "./components/Nav";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
 import SignUp from "./Pages/SignUp";
-// import DogCards from "./components/DogCards/DogCards";
-import HeroPic from "./components/HeroPic/HeroPic";
-import JoinButton from "./components/JoinButton/JoinButton";
-
-import picture from "./assets/dogs.jpg";
-
-const App = () => (
-  <HeroPic backgroundImage={picture}>
-    <h1>PupLife</h1>
-    <h2>Does your pup need some new friends? You came to the right place!</h2>
-    <JoinButton />
-  </HeroPic>
-
 import SearchDash from "./Pages/SearchDash";
-
 
 const App = () => (
   <Router>
@@ -33,7 +19,6 @@ const App = () => (
       </Switch>
     </div>
   </Router>
-
 );
 
 export default App;
