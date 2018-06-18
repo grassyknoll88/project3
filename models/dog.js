@@ -29,12 +29,10 @@ module.exports = function(Sequelize, DataTypes) {
             type: DataTypes.TEXT,
             notEmpty: true
         },
-        // age : {
-        //     type: DataTypes.INTEGER (10)
-        // },
         size : {
             type: DataTypes.TEXT,
-            notEmpty: true
+            notEmpty: true,
+            values: ['Extra Large', 'Large', 'Medium', 'Small', 'Extra Small']
         },
         description : {
             type: DataTypes.TEXT,
@@ -55,9 +53,10 @@ module.exports = function(Sequelize, DataTypes) {
 		imgUrl: {
 			type: DataTypes.TEXT
         },
+
         // classMethods: {
         //     associate: function(models) {
-        //         Dog.hasMany(models.Reviews);
+        //         Dog.hasMany(models.Review);
         //     }
         // }
     
@@ -72,4 +71,6 @@ module.exports = function(Sequelize, DataTypes) {
 	return Dog;
 
 }; 
+
+
 

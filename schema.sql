@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS users_db;
+DROP DATABASE IF EXISTS owners_db;
 
-CREATE DATABASE users_db;
+CREATE DATABASE owners_db;
 
