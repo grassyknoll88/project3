@@ -6,6 +6,7 @@ import picture from "../assets/dogs.jpg";
 import Nav from "../components/Nav/Nav";
 import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
 import ImageUpload from "../components/ImageUpload/ImageUpload";
+import Modal from "../components/Modal/Modal";
 
 const Home = () => (
   // <Container>
