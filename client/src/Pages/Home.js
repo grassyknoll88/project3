@@ -5,9 +5,7 @@ import JoinButton from "../components/JoinButton/JoinButton";
 import picture from "../assets/dogs.jpg";
 import Nav from "../components/Nav/Nav";
 import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
-import FooterPage from "../components/Footer/Footer";
-import ImageUpload from "../components/ImageUpload/ImageUpload";
-import Modal from "../components/Modal/Modal";
+// import FooterPage from "../components/Footer/Footer";
 
 const Home = () => (
   // <Container>
@@ -26,9 +24,14 @@ const Home = () => (
     <div className="row">
       <div className="col-12">
         <InfoBoxes />
+        <img
+          src="../assets/dogfriends.jpg"
+          alt="dogfriends"
+          className="dogspic"
+        />
       </div>
     </div>
-    <FooterPage />
+    {/* <FooterPage /> */}
   </div>
 );
 
