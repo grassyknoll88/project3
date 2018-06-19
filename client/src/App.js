@@ -6,6 +6,8 @@ import SignUp from "./Pages/SignUp";
 import SearchDash from "./Pages/SearchDash";
 import "./App.css";
 
+// handlePageChange = () => {};
+
 const App = () => (
   <Router>
     <div>

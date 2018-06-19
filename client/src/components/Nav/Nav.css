@@ -16,3 +16,8 @@ nav {
 .nav-link {
   color: white;
 }
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: #f7882f;
+}
