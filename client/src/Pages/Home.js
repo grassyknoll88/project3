@@ -5,6 +5,7 @@ import JoinButton from "../components/JoinButton/JoinButton";
 import picture from "../assets/dogs.jpg";
 import Nav from "../components/Nav/Nav";
 import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
+import FooterPage from "../components/Footer/Footer";
 
 const Home = () => (
   // <Container>
@@ -26,6 +27,7 @@ const Home = () => (
         </div>
       </div>
     </div>
+    <FooterPage />
   </div>
 );
 

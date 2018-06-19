@@ -1,28 +1,12 @@
 import React, { Component } from "react";
 import "./ImageUpload.css";
-// import axios from "axios";
 import DropzoneS3Uploader from "react-dropzone-s3-uploader";
-import AWS from "aws-sdk";
 
 class ImageUpload extends React.Component {
   handleFinishedUpload = info => {
     console.log("File uploaded with filename", info.filename);
     console.log("Access it on s3 at", info.fileUrl);
   };
-
-  // class ImageUpload extends Component {
-  //   state = {
-  //     selectedFile: null
-  //   };
-  //   fileSelectedHandler = event => {
-  //     this.setState({
-  //       selectedFile: event.target.files[0]
-  //     });
-  //   };
-
-  //   fileUploadHandler = () => {
-  //     axios.post();
-  //   };
 
   render() {
     const uploadOptions = {
