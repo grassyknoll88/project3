@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import "./App.css";
-import Nav from "./components/Nav";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
 import SignUp from "./Pages/SignUp";
 import SearchDash from "./Pages/SearchDash";
+import "./App.css";
+
+// handlePageChange = () => {};
 
 const App = () => (
   <Router>

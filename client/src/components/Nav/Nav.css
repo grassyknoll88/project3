@@ -5,9 +5,19 @@ ul {
 
 nav {
   background-color: #6b7a8f;
+  font-size: 2rem;
+}
+
+.nav-title {
+  font-size: 2rem;
 }
 
 .navbar-brand,
 .nav-link {
   color: white;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: #f7882f;
 }

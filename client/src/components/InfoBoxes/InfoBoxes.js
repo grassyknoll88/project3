@@ -6,7 +6,7 @@ const InfoBoxes = props => (
   <div>
     <div className="row">
       <div className="col-12">
-        <h1>About PupLife</h1>
+        <h1 className="infoTitle">About PupLife</h1>
       </div>
     </div>
 
