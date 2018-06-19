@@ -21,10 +21,10 @@ const Home = () => (
           <JoinButton />
         </HeroPic>
       </div>
-      <div className="row">
-        <div className="col-12">
-          <InfoBoxes />
-        </div>
+    </div>
+    <div className="row">
+      <div className="col-12">
+        <InfoBoxes />
       </div>
     </div>
   </div>
