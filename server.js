@@ -21,12 +21,12 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 // image s3 uploader config
-app.use(
-  "/s3",
-  require("react-dropzone-s3-uploader/s3router")({
-    bucket: "pup-life"
-  })
-);
+// app.use(
+//   "/s3",
+//   require("react-dropzone-s3-uploader/s3router")({
+//     bucket: "pup-life"
+//   })
+// );
 
 // We need to use sessions to keep track of our user's login status
 // app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
