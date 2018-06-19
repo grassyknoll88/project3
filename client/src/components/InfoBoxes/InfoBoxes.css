@@ -1,3 +1,15 @@
 .infoTitle {
   text-align: center;
+  font-size: 10rem;
+  padding-top: 4rem;
+  color: #f7882f;
+  margin-top: 19rem;
+}
+
+.info {
+  color: #6b7a8f;
+  padding-bottom: 20rem;
+  padding-top: 7.5rem;
+  line-height: 5rem;
+  font-size: 4rem;
 }
