@@ -34,8 +34,8 @@ app.use(express.static("public"));
 // app.use(passport.session());
 // Routes
 // =============================================================
-// require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
+var router = require("./routes/api/dogs.js");
+app.use(router);
 // Starts the server to begin listening
 // =============================================================
 db.sequelize.sync().then(function() {
