@@ -8,17 +8,21 @@ import "./App.css";
 
 // handlePageChange = () => {};
 
-const App = () => (
-  <Router>
-    <div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/searchdash" component={SearchDash} />
-        <Route component={SignUp} />
-      </Switch>
-    </div>
-  </Router>
-);
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/searchdash" component={SearchDash} />
+            <Route exact path="/signup" component={SignUp} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
+}
 
 export default App;
