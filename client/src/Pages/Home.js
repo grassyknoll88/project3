@@ -6,6 +6,7 @@ import picture from "../assets/dogs.jpg";
 import Nav from "../components/Nav/Nav";
 import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
 // import FooterPage from "../components/Footer/Footer";
+import ImageUpload from "../components/ImageUpload/ImageUpload";
 
 const Home = () => (
   // <Container>
@@ -24,6 +25,7 @@ const Home = () => (
     <div className="row">
       <div className="col-12">
         <InfoBoxes />
+        <ImageUpload />
         <img
           src="../assets/dogfriends.jpg"
           alt="dogfriends"
