@@ -16,9 +16,14 @@
 
 .dogspic {
   margin-top: 130px;
-  background-image: linear-gradient(
-      rgba(255, 0, 0, 0.45),
-      rgba(255, 0, 0, 0.45)
-    ),
-    url(/assets/dogfriends.jpg);
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
 }
