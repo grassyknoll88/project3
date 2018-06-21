@@ -7,7 +7,6 @@ import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
 import FooterPage from "../components/Footer/Footer";
 
 const Home = () => (
-  // <Container>
   <div className="container-fluid">
     <div className="row">
       <div className="col-12">
@@ -20,18 +19,8 @@ const Home = () => (
         </HeroPic>
       </div>
     </div>
-    <div className="row">
-      <InfoBoxes />
-      <div className="col-6">
-        <img
-          src="/assets/dogfriends.jpg"
-          alt="dogfriends"
-          className="dogspic col-6"
-          height="600"
-          width="400"
-        />
-      </div>
-    </div>
+
+    <InfoBoxes />
     <FooterPage />
   </div>
 );

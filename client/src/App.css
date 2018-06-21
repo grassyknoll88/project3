@@ -17,3 +17,7 @@ html {
   color: white;
   font-size: 3rem;
 }
+
+.dogsPic {
+  justify-content: flex-end;
+}
