@@ -9,7 +9,6 @@ import ImageUpload from "../components/ImageUpload/ImageUpload";
 
 import FooterPage from "../components/Footer/Footer";
 
-
 const Home = () => (
   <div className="container-fluid">
     <div className="row">
@@ -23,22 +22,11 @@ const Home = () => (
         </HeroPic>
       </div>
     </div>
-    <div className="row">
-      <div className="col-12">
-        <InfoBoxes />
-        <ImageUpload />
-        <img
-          src="../assets/dogfriends.jpg"
-          alt="dogfriends"
-          className="dogspic"
-        />
-      </div>
-    </div>
 
+    <ImageUpload />
 
     <InfoBoxes />
     <FooterPage />
-
   </div>
 );
 
