@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import Container from "../components/Container";
+import React from "react";
 import FooterPage from "../components/Footer/Footer";
 
-class Profile extends Component {
-  state = {
-    test1: "One",
-    test2: "Two"
-  };
-}
+const Profile = () => {
+  <div className="container-fluid">
+    <div className="row">
+      <div className="profileImage" />
+    </div>
+    <FooterPage />
+  </div>;
+};
 
 export default Profile;
