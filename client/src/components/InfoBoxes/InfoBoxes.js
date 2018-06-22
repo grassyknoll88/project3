@@ -12,7 +12,7 @@ const InfoBoxes = props => (
 
     <Container>
       <div className="row">
-        <div className="col-4">
+        <div className="col-5">
           <h3 className="info">
             We have dogs. We love dogs. Most of all, we understand the
             importance of finding activities and playmates to make your pup
@@ -22,7 +22,7 @@ const InfoBoxes = props => (
           </h3>
         </div>
         <div className="col-2" />
-        <div className="col-4">
+        <div className="col-5">
           <img
             src="/assets/dogfriends.jpg"
             alt="dogfriends"
