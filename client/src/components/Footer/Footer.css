@@ -1,5 +1,5 @@
 footer {
-  background: #f7882f;
+  background: #f7c331;
   color: white;
   display: "block";
 
@@ -8,6 +8,7 @@ footer {
   width: "100%";
 }
 
-.footerTitle {
-  font-size: 20px;
+.footerTitle,
+.linksTitle {
+  font-size: 60px;
 }

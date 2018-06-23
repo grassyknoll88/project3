@@ -16,7 +16,7 @@ class FooterPage extends React.Component {
               </p>
             </Col>
             <Col sm="6">
-              <h5 className="title">Links</h5>
+              <h5 className="linksTitle">Links</h5>
               <ul>
                 <li className="list-unstyled">
                   <a href="#!">Link 1</a>
