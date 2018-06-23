@@ -8,15 +8,26 @@ class ImageUpload extends React.Component {
     console.log("Access it on s3 at", info.fileUrl);
   };
 
+  handleError(error) {
+    console.log(error);
+  }
+
+  handleonProgress(infoMessage) {
+    console.log(infoMessage);
+  }
+
   render() {
     const uploadOptions = {
-      server: "http://localhost:3000",
+      server: "http://localhost:8080",
+      signUrl: "/s3/sign",
       signingUrlQueryParams: { uploadType: "avatar" }
     };
-    const s3Url = "https://pup-life.s3.amazonaws.com";
+    const s3Url = "https://s3.us-east-1.amazonaws.com/pup-life/";
     return (
       <DropzoneS3Uploader
         onFinish={this.handleFinishedUpload}
+        onError={this.handleError}
+        onProgress={this.onProgress}
         s3Url={s3Url}
         maxSize={1024 * 1024 * 5}
         upload={uploadOptions}
