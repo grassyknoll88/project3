@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Container from "../components/Container";
 import FooterPage from "../components/Footer/Footer";
+import SignUpForm from "../components/SignUpForm/SignUpForm";
 
 class SignUp extends Component {
   state = {
@@ -11,7 +12,7 @@ class SignUp extends Component {
   render() {
     return (
       <Container>
-        <p>This is a SIGN UP PAGE test: {this.state.test1}</p>
+        <SignUpForm />
       </Container>
     );
   }
