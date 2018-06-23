@@ -2,8 +2,12 @@ footer {
   background: #f7882f;
   color: white;
   display: "block";
-  font-size: 20px;
+
   padding: 20px;
   height: "40px";
   width: "100%";
+}
+
+.footerTitle {
+  font-size: 20px;
 }
