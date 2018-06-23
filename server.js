@@ -8,6 +8,13 @@ var app = express();
 
 var PORT = process.env.PORT || 8080;
 
+// process.env["AWS_SHARED_CREDENTIAL_FILE"] = "$HOME/.aws/credentials";
+
+// console.log(process.env.AWS_SHARED_CREDENTIAL_FILE);
+process.env["AWS_ACCESS_KEY_ID"] = "AKIAJLGBMF5ZLFYVJBUQ";
+process.env["AWS_SECRET_ACCESS_KEY"] =
+  "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";
+
 // Sets up the Express app to handle data parsing
 
 var db = require("./models");
@@ -25,7 +32,9 @@ app.use(
   "/s3",
   require("react-dropzone-s3-uploader/s3router")({
     bucket: "pup-life",
-    region: "us-east-1"
+    region: "us-east-1",
+    headers: { "Access-Control-Allow-Origin": "*" },
+    ACL: "public-read"
   })
 );
 
