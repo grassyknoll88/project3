@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Container from "../components/Container";
 import FooterPage from "../components/Footer/Footer";
 import DogCards from "../components/DogCards/DogCards";
-
 class SearchDash extends Component {
   state = {
     test1: "One",

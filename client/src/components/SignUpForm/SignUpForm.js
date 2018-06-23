@@ -6,7 +6,6 @@ class SignUpForm extends Component {
   state = {
     username: "",
     password: "",
-    last_login: "",
     pet_name: "",
     location: "",
     breed: "",
@@ -29,7 +28,7 @@ class SignUpForm extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-
+    //do axios post
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`Hello ${this.state.username}`);
     this.setState({
