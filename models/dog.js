@@ -14,14 +14,14 @@ module.exports = function(Sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false 
         }, 
-        last_login: {
-			type: DataTypes.DATE
-		}, 
-		name: { 
+        // last_login: {
+		// 	type: DataTypes.DATE
+		// }, 
+		pet_name: { 
 			type: DataTypes.STRING,
 			notEmpty: true
 		},
-        location: {
+        zipcode: {
             type: DataTypes.STRING,
             notEmpty: true
         },
@@ -61,13 +61,6 @@ module.exports = function(Sequelize, DataTypes) {
         // }
     
     });
-    // Dog.associate = function(models) {
-    //     models.Dog.belongsTo(models.User, {
-    //         foriengKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
 	return Dog;
 
 }; 
