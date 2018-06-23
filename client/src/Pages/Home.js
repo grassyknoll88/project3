@@ -4,7 +4,7 @@ import HeroPic from "../components/HeroPic";
 import JoinButton from "../components/JoinButton/JoinButton";
 import Nav from "../components/Nav/Nav";
 import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
-import ImageUpload from "../components/ImageUpload/ImageUpload";
+
 import FooterPage from "../components/Footer/Footer";
 import ModalComponent from "../components/Modal/Modal";
 
@@ -22,9 +22,6 @@ const Home = () => (
         </HeroPic>
       </div>
     </div>
-
-    <ImageUpload />
-
     <InfoBoxes />
     <FooterPage />
   </div>
