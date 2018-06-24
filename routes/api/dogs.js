@@ -2,7 +2,6 @@
 var router = require("express").Router();
 // grabbing our models
 var db = require("../../models");
-var passport = require("../config/passport");
 
 // get route, edited to match sequelize
 router.get("/api/dogs", (req, res) => {
@@ -16,7 +15,7 @@ router.get("/api/dogs", (req, res) => {
 
     
   })
-  //use promise method to pass the dogs...
+  // use promise method to pass the dogs...
     .then(function(dbDog) {
       res.json(dbDog);
     });
@@ -35,18 +34,6 @@ router.get("/api/dogs", (req, res) => {
 //           });
 //           return [latitude, longitude];
 // post route to create dogs
-
-
-module.exports = function(app) {
-   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json("/Home");
-  });
-
-
-
-
-
-
 router.post("/api/signup", function(req, res) {  //or api/users
   db.Dog.create({
     id: req.body.id,
@@ -81,5 +68,5 @@ router.get("/api/profile", function(req, res) {
     })
 })
 
-}
+
 module.exports = router;
