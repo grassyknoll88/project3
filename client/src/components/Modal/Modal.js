@@ -55,7 +55,6 @@ export default class ModalComponent extends React.Component {
               </Col>
             </Row>
           </Container>
-          );
         </Modal>
       </div>
     );
