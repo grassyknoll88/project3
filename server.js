@@ -7,7 +7,19 @@ var path = require("path");
 var app = express();
 
 var PORT = process.env.PORT || 8080;
+var mysql = require('mysql');
+var connection; 
 
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root', 
+    password: '',
+    database: 'owners_db'
+  })
+}
 // process.env["AWS_SHARED_CREDENTIAL_FILE"] = "$HOME/.aws/credentials";
 
 // console.log(process.env.AWS_SHARED_CREDENTIAL_FILE);
