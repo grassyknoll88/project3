@@ -5,6 +5,7 @@
   "dependencies": {
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-dropzone-s3-uploader": "^1.1.0",
