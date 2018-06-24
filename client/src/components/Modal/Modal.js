@@ -29,7 +29,7 @@ export default class ModalComponent extends React.Component {
             <Row>
               <Col md="6">
                 <form>
-                  <p className="h5 text-center mb-4">Sign in</p>
+                  <p className="h3 text-center mb-4">Sign in</p>
                   <div className="grey-text">
                     <Input
                       label="Type your email"
@@ -49,7 +49,7 @@ export default class ModalComponent extends React.Component {
                     />
                   </div>
                   <div className="text-center">
-                    <Button>Login</Button>
+                    <Button className="modalLoginBtn">Login</Button>
                   </div>
                 </form>
               </Col>

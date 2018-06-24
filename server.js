@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Static directory to be served
-app.use(express.static("public"));
+app.use(express.static("client/build"));
 
 // image s3 uploader config
 app.use(

@@ -3,3 +3,8 @@
   margin: 0;
   font-size: 30px;
 }
+
+.modalLoginBtn {
+  height: 10rem;
+  width: 20rem;
+}
