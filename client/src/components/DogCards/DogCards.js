@@ -1,21 +1,29 @@
 import React from "react";
-import "./DogCards.css";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardImage,
+  CardTitle,
+  CardText
+} from "mdbreact";
 
-const DogCards = props => {
+const DogCards = () => {
   return (
-    <div className="container">
-      <div className="DogCards card">
-        <div
-          className="img-container"
-          src="http://via.placeholder.com/300x300"
-          alt="Card image cap"
-        >
-          {/* <div className="card-body">
-                <h5 className="card-title">dogInfo</h5>
-                <p className="card-text"></p> */}
-        </div>
-      </div>
-    </div>
+    <Card>
+      <CardImage
+        className="img-fluid"
+        src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
+      />
+      <CardBody>
+        <CardTitle>Card title</CardTitle>
+        <CardText>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </CardText>
+        <Button href="#">Button</Button>
+      </CardBody>
+    </Card>
   );
 };
 

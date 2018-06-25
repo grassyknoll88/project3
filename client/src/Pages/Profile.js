@@ -1,11 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
+import ProfilePic from "../components/ProfilePic/ProfilePic";
+class Profile extends Component {
+  state = {};
 
-const Profile = () => {
-  <div className="container-fluid">
-    <div className="row">
-      <div className="profileImage" />
-    </div>
-  </div>;
-};
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row" />
+        <ProfilePic />
+      </div>
+    );
+  }
+}
 
 export default Profile;
