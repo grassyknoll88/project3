@@ -21,8 +21,8 @@ export default class ModalComponent extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <button className="logInBtn" onClick={this.onOpenModal}>
-          LOG IN
+        <button className="joinUs btn hvr-grow" onClick={this.onOpenModal}>
+          JOIN US
         </button>
         <Modal open={open} onClose={this.onCloseModal} center>
           <form className="form">
@@ -49,7 +49,7 @@ export default class ModalComponent extends React.Component {
             </button>
             <h1>
               Don't have an account yet?{" "}
-              <a href="#" target="blank">
+              <a href="/signup" target="blank">
                 Sign Up
               </a>
             </h1>

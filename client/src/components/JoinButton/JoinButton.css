@@ -1,4 +1,4 @@
-button {
+/* button {
   height: 10rem;
   width: 20rem;
   background-color: #f7882f;
@@ -13,7 +13,7 @@ button {
 
 /* Button styling */
 /* Grow Rotate */
-.hvr-grow {
+/* .hvr-grow {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -29,4 +29,4 @@ button {
 .hvr-grow:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-}
+} */

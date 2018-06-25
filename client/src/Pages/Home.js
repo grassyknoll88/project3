@@ -13,7 +13,7 @@ const Home = () => (
           <h1 className="title">PupLife</h1>
           <h2 className="description">Does your pup need some new friends?</h2>
           <h3 className="description">You came to the right place!</h3>
-          <JoinButton />
+          {/* <JoinButton /> */}
           <ModalComponent />
         </HeroPic>
       </div>
