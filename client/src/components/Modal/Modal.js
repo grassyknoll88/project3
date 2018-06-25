@@ -25,36 +25,35 @@ export default class ModalComponent extends React.Component {
           LOG IN
         </button>
         <Modal open={open} onClose={this.onCloseModal} center>
-          <Container>
-            <Row>
-              <Col md="6">
-                <form>
-                  <p className="h3 text-center mb-4">Sign in</p>
-                  <div className="grey-text">
-                    <Input
-                      label="Type your email"
-                      icon="envelope"
-                      group
-                      type="email"
-                      validate
-                      error="wrong"
-                      success="right"
-                    />
-                    <Input
-                      label="Type your password"
-                      icon="lock"
-                      group
-                      type="password"
-                      validate
-                    />
-                  </div>
-                  <div className="text-center">
-                    <Button className="modalLoginBtn">Login</Button>
-                  </div>
-                </form>
-              </Col>
-            </Row>
-          </Container>
+          <form className="form">
+            <input
+              className="usernameInput"
+              value={this.state.username}
+              name="username"
+              onChange={this.handleInputChange}
+              type="text"
+              placeholder="Username"
+            />
+            <br />
+            <input
+              className="passwordInput"
+              value={this.state.password}
+              name="password"
+              onChange={this.handleInputChange}
+              type="text"
+              placeholder="Password"
+            />
+            <br />
+            <button className="submitButton" onClick={this.handleFormSubmit}>
+              Submit
+            </button>
+            <h1>
+              Don't have an account yet?{" "}
+              <a href="#" target="blank">
+                Sign Up
+              </a>
+            </h1>
+          </form>
         </Modal>
       </div>
     );

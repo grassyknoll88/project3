@@ -4,20 +4,20 @@
   font-size: 30px;
 }
 
-.modalLoginBtn {
-  height: 10rem;
-  width: 20rem;
+.submitButton {
+  height: 100px;
+  width: 100px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  font-size: 25px;
 }
 
-.styles_closeIcon__1QwbI {
-  margin-left: 200px;
+input[type="text"] {
+  margin: 30px;
+  height: 60px;
+  width: 200px;
 }
 
-.styles_closeButton__20ID4 {
-  margin-left: 200px;
-}
-
-.grey-text {
-  padding-top: 200px;
+input::placeholder {
   font-size: 30px;
 }
