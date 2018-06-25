@@ -5,25 +5,73 @@ import {
   CardBody,
   CardImage,
   CardTitle,
-  CardText
+  CardText,
+  CardGroup
 } from "mdbreact";
 
 const DogCards = () => {
   return (
-    <Card>
-      <CardImage
-        className="img-fluid"
-        src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
-      />
-      <CardBody>
-        <CardTitle>Card title</CardTitle>
-        <CardText>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </CardText>
-        <Button href="#">Button</Button>
-      </CardBody>
-    </Card>
+    <CardGroup deck>
+      <Card>
+        <CardImage
+          src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+          alt="Card image cap"
+          top
+          hover
+          overlay="white-slight"
+        />
+        <CardBody>
+          <CardTitle tag="h5">Panel title</CardTitle>
+          <CardText>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </CardText>
+          <Button color="light-blue" size="md">
+            read more
+          </Button>
+        </CardBody>
+      </Card>
+
+      <Card>
+        <CardImage
+          src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg"
+          alt="Card image cap"
+          top
+          hover
+          overlay="white-slight"
+        />
+        <CardBody>
+          <CardTitle tag="h5">Panel title</CardTitle>
+          <CardText>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </CardText>
+          <Button color="light-blue" size="md">
+            read more
+          </Button>
+        </CardBody>
+      </Card>
+
+      <Card>
+        <CardImage
+          src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg"
+          alt="Card image cap"
+          top
+          hover
+          overlay="white-slight"
+        />
+        <CardBody>
+          <CardTitle tag="h5">Panel title</CardTitle>
+          <CardText>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </CardText>
+          <Button color="light-blue" size="md">
+            read more
+          </Button>
+        </CardBody>
+      </Card>
+    </CardGroup>
   );
 };
 
