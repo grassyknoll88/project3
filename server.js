@@ -6,7 +6,7 @@ var session = require("express-session");
 // =============================================================
 var app = express();
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3001;
 
 // process.env["AWS_SHARED_CREDENTIAL_FILE"] = "$HOME/.aws/credentials";
 
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // // Static directory to be served
-// app.use(express.static("client/build"));
+app.use(express.static("client/build"));
 
 // app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 // app.use(passport.initialize());
