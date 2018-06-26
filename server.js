@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-var passport= require ("./config/passport");
+// var passport= require ("./config/passport");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -24,12 +24,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-// Static directory to be served
-app.use(express.static("client/build"));
+// // Static directory to be served
+// app.use(express.static("client/build"));
 
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // image s3 uploader config
 // app.use(

@@ -3,7 +3,7 @@ var router = require("express").Router();
 // grabbing our models
 var db = require("../../models");
 
-var passport = require("../config/passport");    //<----WE NEED TO PROBABLY CHANGE THE ROUTES SO THEY CAN BE AUTHENTICATED, WE CAN DO THIS TOGETHER ON WEDNESDAY IF YOU WOULD LIKE.  I'M NOT SURE OF HOW TO DO THIS
+// var passport = require("../config/passport");    //<----WE NEED TO PROBABLY CHANGE THE ROUTES SO THEY CAN BE AUTHENTICATED, WE CAN DO THIS TOGETHER ON WEDNESDAY IF YOU WOULD LIKE.  I'M NOT SURE OF HOW TO DO THIS
 
 // get route, edited to match sequelize
 router.get("/api/dogs", (req, res) => {
@@ -71,4 +71,4 @@ router.get("/api/profile", function(req, res) {
 })
 
 
-module.exports = route
+module.exports = router;
