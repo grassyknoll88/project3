@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // // Static directory to be served
-// app.use(express.static("client/build"));
+app.use(express.static("client/build"));
 
 // app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 // app.use(passport.initialize());
