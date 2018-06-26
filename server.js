@@ -6,7 +6,7 @@ var session = require("express-session");
 // =============================================================
 var app = express();
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3001;
 
 // process.env["AWS_SHARED_CREDENTIAL_FILE"] = "$HOME/.aws/credentials";
 
