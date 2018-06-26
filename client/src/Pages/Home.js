@@ -1,7 +1,6 @@
 import React from "react";
 // import Container from "../components/Container";
 import HeroPic from "../components/HeroPic";
-import JoinButton from "../components/JoinButton/JoinButton";
 import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
 import ModalComponent from "../components/Modal/Modal";
 
