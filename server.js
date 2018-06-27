@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-// var passport= require ("./config/passport");
+var passport= require ("./config/passport");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -27,9 +27,9 @@ app.use(bodyParser.json());
 // // Static directory to be served
 app.use(express.static("client/build"));
 
-// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // image s3 uploader config
 // app.use(
@@ -42,14 +42,18 @@ app.use(express.static("client/build"));
 //   })
 // );
 
-// We need to use sessions to keep track of our user's login status
-// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+// to keep track of our user's login status
+app.use(session({ 
+  secret: "keyboard cat", 
+  resave: true, 
+  saveUninitialized: true 
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 // Routes
 // =============================================================
-var router = require("./routes/api/dogs.js");
-app.use(router);
+var router = require("./routes/api/dogs.js")(app);
+//app.use(router);
 // Starts the server to begin listening
 // =============================================================
 db.sequelize.sync().then(function() {
