@@ -9,15 +9,13 @@ var db = require("../../models");
 router.get("/api/dogs", (req, res) => {
   // replace old function with sequelize function
   db.Dog.findAll({
-    attributes: { exclude: ['password']},
+    attributes: { exclude: ["password"] },
     // Here we specify we want to return our dogs in ordered by ascending dog breed
     order: [
       ["zipcode", "ASC"] //this is where we need to group by zipcode
     ]
-
-    
   })
-  // use promise method to pass the dogs...
+    // use promise method to pass the dogs...
     .then(function(dbDog) {
       res.json(dbDog);
     });
@@ -36,7 +34,9 @@ router.get("/api/dogs", (req, res) => {
 //           });
 //           return [latitude, longitude];
 // post route to create dogs
-router.post("/api/signup", function(req, res) {  //or api/users
+router.post("/api/signup", function(req, res) {
+  //or api/users
+  console.log(req.body);
   db.Dog.create({
     id: req.body.id,
     username: req.body.username,
@@ -47,28 +47,34 @@ router.post("/api/signup", function(req, res) {  //or api/users
     breed: req.body.breed,
     size: req.body.size,
     description: req.body.description,
-    email: req.body.email,
+    email: req.body.email
     // imgurl: req.body.imgurl
   })
-  .then(function(dbDog) {
+    .then(function(dbDog) {
       console.log(dbDog);
-      res.json(dbDog); 
-  });
+      res.json(dbDog);
+    })
+    .catch(function(err) {
+      console.log(err);
+      res.status(400).json({ error: err.errors });
+    });
 });
+
+// Need CATCH for promise if form is not filled out according
+// to validation
 
 //route for login
 router.get("/api/login", function(req, res) {
-    db.Dog.findOne({
-        username: req.body.username,
-        password: req.body.password,  
-    })
+  db.Dog.findOne({
+    username: req.body.username,
+    password: req.body.password
   });
+});
 
 router.get("/api/profile", function(req, res) {
-    db.Dog.findOne({
-        where: { id: id }
-    })
-})
-
+  db.Dog.findOne({
+    where: { id: id }
+  });
+});
 
 module.exports = router;

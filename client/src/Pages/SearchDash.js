@@ -13,7 +13,9 @@ class SearchDash extends Component {
     return (
       <Container>
         <SearchForm />
-        <DogCards />
+        <DogCards
+        // dogs={this.state.dogs}  example
+        />
       </Container>
     );
   }
