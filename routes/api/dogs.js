@@ -66,13 +66,14 @@ module.exports = function (app) {
       res.json(dbDog);
     })
   });
-};
+
 
   app.get("/api/profile", function (req, res) {
     db.Dog.findOne({
       where: { id: id }
     })
   })
+};
 
 
 
