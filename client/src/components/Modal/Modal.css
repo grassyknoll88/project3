@@ -16,7 +16,7 @@ input::placeholder {
   font-size: 30px;
 }
 
-.joinUs {
+#joinUs {
   height: 10rem;
   width: 20rem;
   background-color: #f7882f;

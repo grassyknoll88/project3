@@ -21,7 +21,7 @@ export default class ModalComponent extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <button className="joinUs btn hvr-grow" onClick={this.onOpenModal}>
+        <button id="joinUs" className="btn hvr-grow" onClick={this.onOpenModal}>
           JOIN US
         </button>
         <Modal open={open} onClose={this.onCloseModal} center>
