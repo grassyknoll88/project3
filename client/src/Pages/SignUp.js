@@ -32,10 +32,8 @@ class SignUp extends Component {
     return (
       <Container>
         <SignUpForm onFormSubmit={this.onSignUpSubmit} />
-        {/* 
-        Commenting out...due to component being incomplete
-        <ImageUpload /> 
-        */}
+
+        <ImageUpload />
       </Container>
     );
   }

@@ -11,26 +11,7 @@ class SearchDash extends Component {
     test2: "Two"
   };
 
-  // componentDidMount() {
-  //   API.getDogs(data).then(data => {
-  //     app.post(
-  //       "/signup",
-  //       passport.authenticate("local-signup", {
-  //         successRedirect: "/profile",
-
-  //         failureRedirect: "/signup"
-  //       })
-  //     );
-
-  //     app.post(
-  //       "/login",
-  //       passport.authenticate("local-signin", {
-  //         successRedirect: "/profile",
-  //         failureRedirect: "/"
-  //       })
-  //     );
-  //   });
-  // }
+  componentDidMount() {}
 
   render() {
     return (
