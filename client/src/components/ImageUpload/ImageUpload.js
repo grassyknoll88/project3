@@ -1,39 +1,104 @@
-// import React, { Component } from "react";
-// import "./ImageUpload.css";
-// import DropzoneS3Uploader from "react-dropzone-s3-uploader";
+import React, { Component } from "react";
+import firebase from "firebase";
+import FileUploader from "react-firebase-file-uploader";
 
-// class ImageUpload extends React.Component {
-//   handleFinishedUpload = info => {
-//     console.log("File uploaded with filename", info.filename);
-//     console.log("Access it on s3 at", info.fileUrl);
-//   };
+class ImageUpload extends Component {
+  state = {
+    avatar: "",
+    isUploading: false,
+    progress: 0,
+    avatarURL: ""
+  };
+  // ==============================< functions >===================================== //
+  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
 
-//   handleError(error) {
-//     console.log(error);
-//   }
+  handleProgress = progress => this.setState({ progress });
 
-//   handleonProgress(infoMessage) {
-//     console.log(infoMessage);
-//   }
+  handleUploadError = error => {
+    this.setState({ isUploading: false });
+    console.error(error);
+  };
 
-//   render() {
-//     const uploadOptions = {
-//       server: "http://localhost:8080",
-//       signUrl: "/s3/sign",
-//       signingUrlQueryParams: { uploadType: "avatar" }
-//     };
-//     const s3Url = "https://s3.us-east-1.amazonaws.com/pup-life/";
-//     return (
-//       <DropzoneS3Uploader
-//         onFinish={this.handleFinishedUpload}
-//         onError={this.handleError}
-//         onProgress={this.onProgress}
-//         s3Url={s3Url}
-//         maxSize={1024 * 1024 * 5}
-//         upload={uploadOptions}
-//       />
-//     );
-//   }
-// }
+  handleUploadSuccess = filename => {
+    this.setState({ avatar: filename, progress: 100, isUploading: false });
+    firebase
+      .storage()
+      .ref("images")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => this.setState({ avatarURL: url }));
+  };
 
-// export default ImageUpload;
+  //  handleChange = event => {
+  //    event.preventDefault();
+  //      if(event.target.files[0]) {
+  //        const image = event.target.files[0]
+  //        this.setState({ image },
+  //          () => console.log(this.state)
+  //        );
+  //      }
+  //  };
+
+  //  handleUpload = () => {
+  //    var config = {
+  //    apiKey: "AIzaSyD8euegze2x9rm8dICoQDkeFpFUqQKOaWU",
+  //    authDomain: "react-firebase-poc.firebaseapp.com",
+  //    databaseURL: "https://react-firebase-poc.firebaseio.com",
+  //    projectId: "react-firebase-poc",
+  //    storageBucket: "react-firebase-poc.appspot.com",
+  //    messagingSenderId: "685504463848"
+  //  };
+
+  //    firebase.initializeApp(config);
+  //    const storage = firebase.storage();
+  //    const {image} = this.state;
+  //    const uploadTask = storage.ref(`owner_images/${image.name}`).put(image);
+  //    uploadTask.on("state_changed",
+  //    (snapshot) => {
+  //      // progress function ...
+  //
+  //    },
+  //    (error) => {
+  //      // error function ...
+  //      console.log(error);
+  //   },
+  //   () => {
+  //    // completed function ...
+  //    storage.ref('images').child(image.name).getDownloadURL().then(url => {
+  //      console.log(url);
+  //      })
+  // });
+  //};
+
+  // ===============================< page rendering area >================================= //
+  render() {
+    return (
+      <div className="App text-center mt-5">
+        <div className="App-intro mt-5">
+          <div className="mt-5">
+            <form>
+              <label>Choose your profile picture</label>
+              {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
+              {this.state.avatarURL && <img src={this.state.avatarURL} />}
+              <FileUploader
+                accept="image/*"
+                name="avatar"
+                randomizeFilename
+                storageRef={firebase.storage().ref("images")}
+                onUploadStart={this.handleUploadStart}
+                onUploadError={this.handleUploadError}
+                onUploadSuccess={this.handleUploadSuccess}
+                onProgress={this.handleProgress}
+              />
+            </form>
+            {/*     <input type="file" onChange={this.handleChange} />
+            <button onClick={this.handleUpload} >Upload</button>
+        */}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default ImageUpload;
