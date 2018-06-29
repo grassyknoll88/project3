@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
+import ResizeImage from "react-resize-image";
 
 class ImageUpload extends Component {
   state = {
@@ -91,9 +92,11 @@ class ImageUpload extends Component {
                 onProgress={this.handleProgress}
               />
             </form>
-            {/*     <input type="file" onChange={this.handleChange} />
-            <button onClick={this.handleUpload} >Upload</button>
-        */}
+            {/* <ResizeImage
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg?height=50%25"
+              alt="Tsunami bt hokusai"
+              options={{ width: 200 }}
+            /> */}
           </div>
         </div>
       </div>
