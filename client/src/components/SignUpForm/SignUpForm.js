@@ -75,7 +75,7 @@ class SignUpForm extends Component {
             <br />
             <input
               value={this.state.city}
-              name="City"
+              name="city"
               onChange={this.handleInputChange}
               type="text"
               placeholder="What city do you live in?"
