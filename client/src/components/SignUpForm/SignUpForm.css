@@ -1,0 +1,20 @@
+input[type="text"] {
+  width: 100%;
+  border: 1px solid #f7c331;
+}
+
+.signUpSubmitBtn {
+  height: 100px;
+  width: 300px;
+  font-size: 30px;
+  background-color: #f7882f;
+  color: white;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.signUpPageTitle {
+  font-size: 40px;
+  padding-top: 50px;
+}

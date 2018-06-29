@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SignUpForm.css";
+import ImageUpload from "../ImageUpload/ImageUpload";
 
 class SignUpForm extends Component {
   // Setting the component's initial state
@@ -37,7 +38,7 @@ class SignUpForm extends Component {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
-        <p>Hello {this.state.username}</p>
+        <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
         <div className="container">
           <form className="form">
             <input
@@ -47,6 +48,7 @@ class SignUpForm extends Component {
               type="text"
               placeholder="Please enter your email address"
             />
+            <br />
             <input
               value={this.state.username}
               name="username"
@@ -54,6 +56,7 @@ class SignUpForm extends Component {
               type="text"
               placeholder="Please enter a username"
             />
+            <br />
             <input
               value={this.state.password}
               name="password"
@@ -61,6 +64,7 @@ class SignUpForm extends Component {
               type="text"
               placeholder="Please enter a password"
             />
+            <br />
             <input
               value={this.state.password}
               name="password"
@@ -68,6 +72,7 @@ class SignUpForm extends Component {
               type="text"
               placeholder="Please enter a password"
             />
+            <br />
             <input
               value={this.state.pet_name}
               name="pet_name"
@@ -75,6 +80,7 @@ class SignUpForm extends Component {
               type="text"
               placeholder="What is your dog's name?"
             />
+            <br />
             <input
               value={this.state.location}
               name="location"
@@ -82,6 +88,7 @@ class SignUpForm extends Component {
               type="text"
               placeholder="What is your zipcode?"
             />
+            <br />
             <input
               value={this.state.breed}
               name="breed"
@@ -89,6 +96,7 @@ class SignUpForm extends Component {
               type="text"
               placeholder="What breed is your dog?"
             />
+            <br />
             <input
               value={this.state.description}
               name="description"
@@ -96,7 +104,11 @@ class SignUpForm extends Component {
               type="text"
               placeholder="How would you describe your pet (in 300 characters)"
             />
-            <button onClick={this.handleFormSubmit}>Submit</button>
+            <br />
+            <ImageUpload />
+            <button onClick={this.handleFormSubmit} className="signUpSubmitBtn">
+              Submit
+            </button>
           </form>
         </div>
       </div>
