@@ -24,7 +24,9 @@
     "body-parser": "^1.17.2",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+
     "firebase": "^5.2.0",
+
     "if-env": "^1.0.4",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
@@ -32,6 +34,9 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-dropzone-s3-uploader": "^1.1.0",
+
+    "react-resize-image": "^1.0.4",
+
     "react-firebase-file-uploader": "^2.4.2",
     "react-scripts": "1.1.4",
     "sequelize": "^4.38.0",
