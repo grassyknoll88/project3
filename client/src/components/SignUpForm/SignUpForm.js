@@ -66,11 +66,19 @@ class SignUpForm extends Component {
             />
             <br />
             <input
-              value={this.state.password}
-              name="password"
+              value={this.state.state_id}
+              name="state"
               onChange={this.handleInputChange}
               type="text"
-              placeholder="Please enter a password"
+              placeholder="What state do you live in?"
+            />
+            <br />
+            <input
+              value={this.state.city}
+              name="City"
+              onChange={this.handleInputChange}
+              type="text"
+              placeholder="What city do you live in?"
             />
             <br />
             <input
@@ -81,14 +89,7 @@ class SignUpForm extends Component {
               placeholder="What is your dog's name?"
             />
             <br />
-            <input
-              value={this.state.location}
-              name="location"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="What is your zipcode?"
-            />
-            <br />
+
             <input
               value={this.state.breed}
               name="breed"

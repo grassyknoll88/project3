@@ -81,6 +81,7 @@ class ImageUpload extends Component {
               <label>Choose your profile picture</label>
               {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
               {this.state.avatarURL && <img src={this.state.avatarURL} />}
+              <br />
               <FileUploader
                 accept="image/*"
                 name="avatar"
