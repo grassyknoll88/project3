@@ -44,6 +44,9 @@ module.exports = function (app) {
       });
   });
 
+  //route for reviews
+  
+
   //route for login
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     db.Dog.findOne({
