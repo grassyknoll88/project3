@@ -20,6 +20,14 @@ module.exports = function(Sequelize, DataTypes) {
       type: DataTypes.STRING,
       notEmpty: true
     },
+    city: {
+      type:  DataTypes.STRING,
+      notEmpty: true
+    },
+    state: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    },
     zipcode: {
       type: DataTypes.STRING,
       notEmpty: true
