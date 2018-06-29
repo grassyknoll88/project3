@@ -1,93 +1,122 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Reviews.css";
 
-const commentData = [
-  {
-    author: "Shawn Spencer",
-    text: "I've heard it both ways"
-  },
-  {
-    author: "Burton Guster",
-    text: "You hear about Pluto? That's messed up"
-  }
-];
-const CommentBox = React.createClass({
-  getInitialState: function() {
-    return {
-      data: commentData
+class Reviews extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      showComments: false,
+      comments: []
     };
-  },
-  handleCommentSubmit: function(comment) {
-    this.props.data.push(comment);
-    const comments = this.state.data;
-    const newComments = comments.concat([comment]);
-    this.setState({ data: newComments });
-  },
-  render: function() {
+  }
+
+  render() {
+    const comments = this._getComments();
+    let commentNodes;
+    let buttonText = "Read Reviews";
+
+    if (this.state.showComments) {
+      buttonText = "Close Reviews";
+      commentNodes = <div className="comment-list">{comments}</div>;
+    }
+
     return (
       <div className="comment-box">
-        <CommentForm
-          data={this.props.data}
-          onCommentSubmit={this.handleCommentSubmit}
-        />
-        <CommentList data={this.props.data} />
+        <h2>Tell us what you think!</h2>
+        <CommentForm addComment={this._addComment.bind(this)} />
+        <button id="comment-reveal" onClick={this._handleClick.bind(this)}>
+          {buttonText}
+        </button>
+        <h3>Reviews</h3>
+        <h4 className="comment-count">
+          {this._getCommentsTitle(comments.length)}
+        </h4>
+        {commentNodes}
       </div>
     );
+  } // end render
+
+  _addComment(author, body) {
+    const comment = {
+      id: this.state.comments.length + 1,
+      author,
+      body
+    };
+    this.setState({ comments: this.state.comments.concat([comment]) }); // *new array references help React stay fast, so concat works better than push here.
   }
-});
-const CommentList = React.createClass({
-  render: function() {
-    return (
-      <div className="comment-list">
-        {this.props.data.map(function(c) {
-          return <Comment author={c.author} text={c.text} />;
-        })}
-      </div>
-    );
+
+  _handleClick() {
+    this.setState({
+      showComments: !this.state.showComments
+    });
   }
-});
-const CommentForm = React.createClass({
-  handleSubmit: function(e) {
-    e.preventDefault();
-    const authorVal = e.target[0].value.trim();
-    const textVal = e.target[1].value.trim();
-    if (!textVal || !authorVal) {
-      return;
+
+  _getComments() {
+    return this.state.comments.map(comment => {
+      return (
+        <Comment author={comment.author} body={comment.body} key={comment.id} />
+      );
+    });
+  }
+
+  _getCommentsTitle(commentCount) {
+    if (commentCount === 0) {
+      return "No reviews yet";
+    } else if (commentCount === 1) {
+      return "1 review";
+    } else {
+      return `${commentCount} reviews`;
     }
-    this.props.onCommentSubmit({ author: authorVal, text: textVal });
-    e.target[0].value = "";
-    e.target[1].value = "";
-    return;
-  },
-  render: function() {
+  }
+} // end CommentBox component
+
+class CommentForm extends React.Component {
+  render() {
     return (
-      <form className="comment-form form-group" onSubmit={this.handleSubmit}>
-        <div className="input-group">
-          <span className="input-group-addon">Name</span>
-          <input type="text" placeholder="Your name" className="form-control" />
-        </div>
-        <div className="input-group">
-          <span className="input-group-addon">Comment</span>
+      <form className="comment-form" onSubmit={this._handleSubmit.bind(this)}>
+        <div className="comment-form-fields">
           <input
-            type="text"
-            placeholder="Say something..."
-            className="form-control"
+            className="reviewName"
+            placeholder="Name"
+            required
+            ref={input => (this._author = input)}
+          />
+          <br />
+          <textarea
+            placeholder="Comment"
+            rows="4"
+            required
+            ref={textarea => (this._body = textarea)}
           />
         </div>
-        <input type="submit" value="Post" className="btn btn-primary" />
+        <div className="comment-form-actions">
+          <button className="postReviewBtn" type="submit">
+            Post Review
+          </button>
+        </div>
       </form>
     );
+  } // end render
+
+  _handleSubmit(event) {
+    event.preventDefault(); // prevents page from reloading on submit
+    let author = this._author;
+    let body = this._body;
+    this.props.addComment(author.value, body.value);
   }
-});
-const Comment = React.createClass({
-  render: function() {
+} // end CommentForm component
+
+class Comment extends React.Component {
+  render() {
     return (
       <div className="comment">
-        <h2 className="author">{this.props.author}</h2>
-        {this.props.text}
+        <p className="comment-header">{this.props.author}</p>
+        <p className="comment-body">- {this.props.body}</p>
+        <div className="comment-footer" />
       </div>
     );
   }
-});
+}
 
-export default CommentBox;
+export default Reviews;

@@ -1,0 +1,84 @@
+body {
+  font-family: "PT Sans", sans-serif;
+  padding: 2rem;
+}
+button {
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.75em;
+  display: inline-block;
+  text-decoration: none;
+}
+
+&:hover {
+  cursor: pointer;
+}
+&:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.comment-box {
+  width: 100%;
+  color: #6b7a8f;
+  background-color: #fff;
+  border-radius: 0.875rem;
+  padding: 0.2rem 1rem 2rem;
+  border: 1px solid #f7882f;
+  margin-top: 25px;
+}
+.comment-form {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+.comment-form-fields {
+  margin-bottom: 0.25rem;
+}
+
+.reviewName,
+textarea {
+  border: none;
+  border-bottom: 1px solid #f7882f;
+  font-size: 30px;
+  padding: 0.25rem 0;
+  width: 97%;
+  font-style: italic;
+  height: 45px;
+}
+
+.postReviewBtn {
+  color: #f7882f;
+}
+
+.comment-count {
+  color: #f7882f;
+}
+#comment-reveal {
+  float: right;
+  background-color: #f7882f;
+  color: #fff;
+}
+.comment {
+  border-top: 0.125rem solid #f7882f;
+}
+.comment-body {
+  font-style: italic;
+  margin-left: 1rem;
+}
+.comment-footer {
+  margin-bottom: 1rem;
+}
+.comment-footer-delete {
+  padding: 0.2rem 0;
+  color: #f7882f;
+  text-decoration: none;
+}
+
+&:hover {
+  color: #f7882f;
+  font-weight: bold;
+}
