@@ -7,23 +7,21 @@ import {
   CardTitle,
   CardText
 } from "mdbreact";
+import "./DogCards.css";
 
-const DogCards = () => {
+const DogCards = props => {
   return (
-    <Card>
-      <CardImage
-        className="img-fluid"
-        src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
-      />
-      <CardBody>
-        <CardTitle>Card title</CardTitle>
-        <CardText>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </CardText>
-        <Button href="#">Button</Button>
-      </CardBody>
-    </Card>
+    <div className="cardDiv">
+      <Card>
+        <CardImage>{props.imgurl}</CardImage>
+        <CardBody>
+          <CardTitle>{props.pet_name}</CardTitle>
+          <h5>{props.breed}</h5>
+          <CardText>{props.city}</CardText>
+          <Button href="#">Button</Button>
+        </CardBody>
+      </Card>
+    </div>
   );
 };
 

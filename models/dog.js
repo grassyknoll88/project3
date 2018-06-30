@@ -21,7 +21,7 @@ module.exports = function(Sequelize, DataTypes) {
       notEmpty: true
     },
     city: {
-      type:  DataTypes.STRING,
+      type: DataTypes.STRING,
       notEmpty: true
     },
     state: {
@@ -44,7 +44,7 @@ module.exports = function(Sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true
-     //validate: {isEmail:true}
+      //validate: {isEmail:true}
     },
 
     imgurl: {
@@ -53,6 +53,7 @@ module.exports = function(Sequelize, DataTypes) {
     review_id: {
       type: DataTypes.INTEGER
     },
+
 
   });
   Dog.associate = function(models) {
