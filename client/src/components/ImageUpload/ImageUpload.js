@@ -84,6 +84,7 @@ class ImageUpload extends Component {
               {this.state.avatarURL && <img src={this.state.avatarURL} />}
               <br />
               <FileUploader
+                className="rendered-img"
                 accept="image/*"
                 name="avatar"
                 randomizeFilename
@@ -93,11 +94,6 @@ class ImageUpload extends Component {
                 onUploadSuccess={this.handleUploadSuccess}
                 onProgress={this.handleProgress}
               />
-              {/* <ResizeImage
-                src={this.state.avatarURL}
-                alt="User profile image"
-                options={{ width: 200 }}
-              /> */}
             </form>
           </div>
         </div>

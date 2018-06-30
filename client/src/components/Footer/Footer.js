@@ -15,6 +15,19 @@ class FooterPage extends React.Component {
                 alt="PupLife logo"
               />
             </Col>
+            <Col sm="6">
+              <ul>
+                <li className="list-unstyled">
+                  <a href="#!">About Us</a>
+                </li>
+                <li className="list-unstyled">
+                  <a href="#!">Contact Us</a>
+                </li>
+                <li className="list-unstyled">
+                  <a href="#!">Sign Up</a>
+                </li>
+              </ul>
+            </Col>
           </Row>
         </Container>
         <Container fluid className="footer-text text-center">
