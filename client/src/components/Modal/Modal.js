@@ -40,7 +40,7 @@ export default class ModalComponent extends React.Component {
               value={this.state.password}
               name="password"
               onChange={this.handleInputChange}
-              type="text"
+              type="password"
               placeholder="Password"
             />
             <br />
