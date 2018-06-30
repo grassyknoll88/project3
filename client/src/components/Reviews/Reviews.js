@@ -84,7 +84,8 @@ class CommentForm extends React.Component {
           />
           <br />
           <textarea
-            placeholder="Comment"
+            id="reviewText"
+            placeholder="Review"
             rows="4"
             required
             ref={textarea => (this._body = textarea)}
