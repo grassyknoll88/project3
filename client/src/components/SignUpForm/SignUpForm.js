@@ -39,7 +39,7 @@ class SignUpForm extends Component {
 
   onComplete = imgurl => {
     console.log(imgurl);
-    this.setState({ imgUrl: imgurl });
+    this.setState({ imgurl: imgurl });
   };
 
   render() {
