@@ -8,7 +8,8 @@ class SignUpForm extends Component {
     username: "",
     password: "",
     pet_name: "",
-    location: "",
+    state: "",
+    city: "",
     breed: "",
     size: "",
     description: "",
@@ -66,7 +67,7 @@ class SignUpForm extends Component {
             />
             <br />
             <input
-              value={this.state.state_id}
+              value={this.state.state}
               name="state"
               onChange={this.handleInputChange}
               type="text"

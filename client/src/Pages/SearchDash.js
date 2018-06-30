@@ -6,10 +6,23 @@ import SearchForm from "../components/SearchForm/SearchForm";
 class SearchDash extends Component {
   state = {
     test1: "One",
-    test2: "Two"
+    test2: "Two",
+    selectedOption: ""
   };
 
   componentDidMount() {}
+
+  handleChange = selectedOption => {
+    this.setState({ selectedOption });
+    // selectedOption can be null when the `x` (close) button is clicked
+    if (selectedOption) {
+      console.log(`Selected: ${selectedOption.label}`);
+    }
+  };
+
+  handleSelect = value => {
+    console.log(value);
+  };
 
   render() {
     return (
