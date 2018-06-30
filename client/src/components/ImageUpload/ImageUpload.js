@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
 import ResizeImage from "react-resize-image";
+import "./ImageUpload.css";
 
 class ImageUpload extends Component {
   state = {
@@ -78,7 +79,7 @@ class ImageUpload extends Component {
         <div className="App-intro mt-5">
           <div className="mt-5">
             <form>
-              <label>Choose your profile picture</label>
+              <label className="upload-text">Choose your profile picture</label>
               {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
               {this.state.avatarURL && <img src={this.state.avatarURL} />}
               <br />
@@ -92,12 +93,12 @@ class ImageUpload extends Component {
                 onUploadSuccess={this.handleUploadSuccess}
                 onProgress={this.handleProgress}
               />
+              {/* <ResizeImage
+                src={this.state.avatarURL}
+                alt="User profile image"
+                options={{ width: 200 }}
+              /> */}
             </form>
-            {/* <ResizeImage
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg?height=50%25"
-              alt="Tsunami bt hokusai"
-              options={{ width: 200 }}
-            /> */}
           </div>
         </div>
       </div>

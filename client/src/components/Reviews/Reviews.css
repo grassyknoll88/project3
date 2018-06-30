@@ -12,10 +12,10 @@ button {
   text-decoration: none;
 }
 
-&:hover {
+button:hover {
   cursor: pointer;
 }
-&:focus {
+button:focus {
   text-decoration: none;
   outline: none;
 }
@@ -78,7 +78,7 @@ textarea {
   text-decoration: none;
 }
 
-&:hover {
+.comment-footer-delete:hover {
   color: #f7882f;
   font-weight: bold;
 }
