@@ -52,17 +52,19 @@ module.exports = function (app) {
     db.Dog.findOne({
       username: req.body.username,
       password: req.body.password,
-    }).then (function(dbDog){
-      res.json(dbDog);
-    })
-  });
+    }).then (function(data){
+      res.json(data);
+  
+    });
 
 
-  app.get("/api/profile", function (req, res) {
-    db.Dog.findOne({
-      where: { id: id }
-    })
-  })
+  // app.get("/api/profile", function (req, res) {
+  //   res.render('profile',{user:req.username})
+
+  //   // db.Dog.findOne({
+  //   //   where: { id: id }
+  //   //})
+  // })
 };
 
 //doing nothing just trying to push to github

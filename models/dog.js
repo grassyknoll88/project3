@@ -1,3 +1,5 @@
+var bcrypt = require("bcrypt-nodejs");
+
 module.exports = function(Sequelize, DataTypes) {
   var Dog = Sequelize.define("Dog", {
     id: {
@@ -60,7 +62,13 @@ module.exports = function(Sequelize, DataTypes) {
     //     associate: function(models) {
     //         Dog.hasMany(models.Review);
     //     }
-    // }
+    // } 
+  });
+  Dog.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+  };
+  Dog.hook("beforeCreate", function(Dog) {
+    Dog.passworD = bcrypt.hashSync(Dog.password, bcrypt.genSaltSync(10), null);
   });
   return Dog;
 };
