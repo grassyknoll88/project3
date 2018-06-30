@@ -35,12 +35,12 @@ const Nav = props => (
         </li>
         <li
           className={
-            window.location.pathname === "/searchdash"
+            window.location.pathname === "/search"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/searchdash" className="nav-link">
+          <Link to="/search" className="nav-link">
             Search
           </Link>
         </li>
