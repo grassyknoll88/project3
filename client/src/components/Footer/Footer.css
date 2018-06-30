@@ -12,3 +12,17 @@ footer {
 .linksTitle {
   font-size: 60px;
 }
+
+.footer-text {
+  font-size: 18px;
+  background-color: #f7c331;
+}
+
+.footer-logo {
+  width: 350px;
+  text-align: center;
+}
+
+.text-left {
+  background-color: #f7c331;
+}
