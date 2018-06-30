@@ -44,8 +44,8 @@ module.exports = function(app) {
       zipcode: req.body.zipcode,
       size: req.body.size,
       description: req.body.description,
-      email: req.body.email
-      //imgurl: req.body.imgurl
+      email: req.body.email,
+      imgurl: req.body.imgurl
     }).then(function(dbDog) {
       console.log(dbDog);
       res.json(dbDog);
@@ -53,7 +53,17 @@ module.exports = function(app) {
   });
 
   //route for reviews
-
+  app.post("/api/routes", function(req, res) {
+    db.Review.create({
+      id:req.body.id,
+      username_id: req.body.username_id,
+      review: req.body.review
+    }).then(function(dbDog) {
+      consol.log(dbDog);
+      res.json(dbDog);
+    });
+  });
+  
   //route for login
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     db.Dog.findOne({
@@ -70,6 +80,6 @@ module.exports = function(app) {
     });
   });
 
-};
+}
 
 //doing nothing just trying to push to github
