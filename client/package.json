@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.18.0",
+    "downshift": "^2.0.10",
     "firebase": "^5.2.0",
     "mdbreact": "^4.5.0",
     "react": "^16.4.1",

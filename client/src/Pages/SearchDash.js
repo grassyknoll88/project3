@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Container from "../components/Container";
 import DogCards from "../components/DogCards/DogCards";
 import SearchForm from "../components/SearchForm/SearchForm";
-import Select from "react-select";
+
 class SearchDash extends Component {
   state = {
     test1: "One",
@@ -27,21 +27,7 @@ class SearchDash extends Component {
   render() {
     return (
       <Container>
-        {/* <SearchForm
-          state={this.state}
-          handleChange={this.handleChange}
-          handleSelect={this.handleSelect}
-        /> */}
-        <Select
-          name="form-field-name"
-          value={this.state.selectedOption}
-          onChange={this.handleChange}
-          // selectValue={props.}
-          options={[
-            { value: "one", label: "One" },
-            { value: "two", label: "Two" }
-          ]}
-        />
+        <SearchForm />
         <DogCards dogs={this.state.dogs} />
       </Container>
     );
