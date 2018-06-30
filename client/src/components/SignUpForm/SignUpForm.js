@@ -20,6 +20,8 @@ class SignUpForm extends Component {
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     const { name, value } = event.target;
+    console.log("name = ", name);
+    console.log("value = ", value);
 
     // Updating the input's state
     this.setState({
@@ -33,6 +35,11 @@ class SignUpForm extends Component {
     this.props.onFormSubmit({
       ...this.state
     });
+  };
+
+  onComplete = imgUrl => {
+    console.log(imgUrl);
+    this.setState({ imgUrl: imgUrl });
   };
 
   render() {
@@ -107,7 +114,8 @@ class SignUpForm extends Component {
               placeholder="How would you describe your pet (in 300 characters)"
             />
             <br />
-            <ImageUpload />
+            <ImageUpload onComplete={this.onComplete} />
+            <img className="renderedImg" src={this.state.imgUrl} />
             <button onClick={this.handleFormSubmit} className="signUpSubmitBtn">
               Submit
             </button>
