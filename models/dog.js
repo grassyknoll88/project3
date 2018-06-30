@@ -68,7 +68,7 @@ module.exports = function(Sequelize, DataTypes) {
     return bcrypt.compareSync(password, this.password);
   };
   Dog.hook("beforeCreate", function(Dog) {
-    Dog.passworD = bcrypt.hashSync(Dog.password, bcrypt.genSaltSync(10), null);
+    Dog.password = bcrypt.hashSync(Dog.password, bcrypt.genSaltSync(10), null);
   });
   return Dog;
 };
