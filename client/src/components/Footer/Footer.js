@@ -17,11 +17,9 @@ class FooterPage extends React.Component {
             </Col>
           </Row>
         </Container>
-        <div className="footer-copyright text-center">
-          <Container fluid className="footer-text">
-            &copy; {new Date().getFullYear()} Copyright <p> PupLife</p>
-          </Container>
-        </div>
+        <Container fluid className="footer-text text-center">
+          &copy; {new Date().getFullYear()} Copyright <p> PupLife</p>
+        </Container>
       </Footer>
     );
   }
