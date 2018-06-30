@@ -28,7 +28,10 @@ class ImageUpload extends Component {
       .ref("images")
       .child(filename)
       .getDownloadURL()
-      .then(url => this.setState({ avatarURL: url }));
+      .then(url => {
+        this.setState({ avatarURL: url });
+        this.props.onComplete(url);
+      });
   };
 
   //  handleChange = event => {
@@ -81,10 +84,8 @@ class ImageUpload extends Component {
             <form>
               <label className="upload-text">Choose your profile picture</label>
               {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
-              {this.state.avatarURL && <img src={this.state.avatarURL} />}
               <br />
               <FileUploader
-                className="rendered-img"
                 accept="image/*"
                 name="avatar"
                 randomizeFilename

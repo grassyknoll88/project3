@@ -18,3 +18,9 @@ input[type="text"] {
   font-size: 40px;
   padding-top: 50px;
 }
+
+.renderedImg {
+  max-width: 200px;
+  float: right;
+  margin-right: 100px;
+}
