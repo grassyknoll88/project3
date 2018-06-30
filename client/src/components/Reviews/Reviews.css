@@ -26,7 +26,7 @@ button:focus {
   background-color: #fff;
   border-radius: 0.875rem;
   padding: 0.2rem 1rem 2rem;
-  border: 1px solid #f7882f;
+  border: 1px solid #6b7a8f;
   margin-top: 25px;
 }
 .comment-form {
@@ -42,7 +42,7 @@ button:focus {
 .reviewName,
 textarea {
   border: none;
-  border-bottom: 1px solid #f7882f;
+  border-bottom: 1px solid #6b7a8f;
   font-size: 30px;
   padding: 0.25rem 0;
   width: 97%;
@@ -51,7 +51,10 @@ textarea {
 }
 
 .postReviewBtn {
-  color: #f7882f;
+  color: #fff;
+  background-color: #f7882f;
+  font-size: 12px;
+  margin-top: 12px;
 }
 
 .comment-count {
@@ -59,11 +62,13 @@ textarea {
 }
 #comment-reveal {
   float: right;
+  font-size: 14px;
   background-color: #f7882f;
   color: #fff;
+  margin-right: 60px;
 }
 .comment {
-  border-top: 0.125rem solid #f7882f;
+  border-top: 0.125rem solid #6b7a8f;
 }
 .comment-body {
   font-style: italic;
