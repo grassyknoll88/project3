@@ -53,13 +53,13 @@ module.exports = function(app) {
   });
 
   //route for reviews
-  app.post("/api/routes", function(req, res) {
+  app.post("/api/review", function(req, res) {
     db.Review.create({
       id:req.body.id,
-      username_id: req.body.username_id,
+      dog_id: req.body.dog_id,
       review: req.body.review
     }).then(function(dbDog) {
-      consol.log(dbDog);
+      console.log(dbDog);
       res.json(dbDog);
     });
   });

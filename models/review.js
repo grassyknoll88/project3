@@ -6,10 +6,12 @@ module.exports = function(Sequelize, DataTypes) {
 			primaryKey: true, 
 			type: DataTypes.INTEGER
         },
-        username_id: {
-            type: DataTypes.INTEGER,
-            notEmpty: true
-        },
+        // user_id: {
+        //     type: DataTypes.INTEGER,
+        //     notEmpty: true
+        //user_id logged in pull from passport
+        
+        // },
 		// reviewer_id: { 
 		// 	type: DataTypes.STRING,
 		// 	notEmpty: true

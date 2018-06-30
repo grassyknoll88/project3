@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ProfilePic from "../components/ProfilePic/ProfilePic";
 import Reviews from "../components/Reviews/Reviews";
 
 class Profile extends Component {
@@ -9,7 +8,7 @@ class Profile extends Component {
     return (
       <div className="container-fluid">
         <div className="row" />
-        <ProfilePic />
+       
         <Reviews />
       </div>
     );
