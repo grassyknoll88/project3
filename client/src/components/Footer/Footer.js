@@ -15,7 +15,7 @@ class FooterPage extends React.Component {
                 alt="PupLife logo"
               />
             </Col>
-            <Col sm="6">
+            <Col sm="6" className="linkDiv">
               <ul>
                 <li className="list-unstyled">
                   <a href="#!">About Us</a>
