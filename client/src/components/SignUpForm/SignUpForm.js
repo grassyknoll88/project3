@@ -37,9 +37,9 @@ class SignUpForm extends Component {
     });
   };
 
-  onComplete = imgUrl => {
-    console.log(imgUrl);
-    this.setState({ imgUrl: imgUrl });
+  onComplete = imgurl => {
+    console.log(imgurl);
+    this.setState({ imgUrl: imgurl });
   };
 
   render() {
@@ -115,7 +115,7 @@ class SignUpForm extends Component {
             />
             <br />
             <ImageUpload onComplete={this.onComplete} />
-            <img className="renderedImg" src={this.state.imgUrl} />
+            <img className="renderedImg" src={this.state.imgurl} />
             <button onClick={this.handleFormSubmit} className="signUpSubmitBtn">
               Submit
             </button>
