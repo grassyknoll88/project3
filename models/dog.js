@@ -26,19 +26,19 @@ module.exports = function(Sequelize, DataTypes) {
       type: DataTypes.STRING,
       notEmpty: true
     },
-    zipcode: {
-      type: DataTypes.STRING,
-      notEmpty: true
-    },
+    // zipcode: {
+    //   type: DataTypes.STRING,
+    //   notEmpty: true
+    // },
     breed: {
       type: DataTypes.TEXT,
       notEmpty: true
     },
-    size: {
-      type: DataTypes.TEXT,
-      notEmpty: true,
-      values: ["Extra Large", "Large", "Medium", "Small", "Extra Small"]
-    },
+    // size: {
+    //   type: DataTypes.TEXT,
+    //   notEmpty: true,
+    //   values: ["Extra Large", "Large", "Medium", "Small", "Extra Small"]
+    // },
     description: {
       type: DataTypes.TEXT,
       validate: {
