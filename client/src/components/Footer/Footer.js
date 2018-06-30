@@ -9,36 +9,30 @@ class FooterPage extends React.Component {
         <Container className="text-left">
           <Row>
             <Col sm="6">
-              <h5 className="footerTitle">Footer Content</h5>
-              <p>
-                Here you can use rows and columns here to organize your footer
-                content.
-              </p>
+              <img
+                className="footer-logo"
+                src="../../assets/white_logo_transparent.png"
+                alt="PupLife logo"
+              />
             </Col>
             <Col sm="6">
-              <h5 className="linksTitle">Links</h5>
               <ul>
                 <li className="list-unstyled">
-                  <a href="#!">Link 1</a>
+                  <a href="#!">About Us</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Link 2</a>
+                  <a href="#!">Contact Us</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Link 3</a>
-                </li>
-                <li className="list-unstyled">
-                  <a href="#!">Link 4</a>
+                  <a href="#!">Sign Up</a>
                 </li>
               </ul>
             </Col>
           </Row>
         </Container>
-        <div className="footer-copyright text-center">
-          <Container fluid>
-            &copy; {new Date().getFullYear()} Copyright <p> PupLife</p>
-          </Container>
-        </div>
+        <Container fluid className="footer-text text-center">
+          &copy; {new Date().getFullYear()} Copyright <p> PupLife</p>
+        </Container>
       </Footer>
     );
   }

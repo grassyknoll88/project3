@@ -2,13 +2,28 @@ footer {
   background: #f7c331;
   color: white;
   display: "block";
-
   padding: 20px;
   height: "40px";
   width: "100%";
 }
 
-.footerTitle,
-.linksTitle {
-  font-size: 60px;
+.list-unstyled {
+  margin-top: 4px;
+  font-size: 18px;
+  padding: 6px;
+  text-align: right;
+}
+
+a:hover {
+  color: #6b7a8f;
+}
+
+.footer-text {
+  font-size: 10px;
+  background-color: #f7c331;
+}
+
+.footer-logo {
+  width: 350px;
+  text-align: center;
 }
