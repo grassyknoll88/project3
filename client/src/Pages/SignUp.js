@@ -19,11 +19,6 @@ class SignUp extends Component {
         //send to profile page
       })
       .catch(err => {
-        if (err.response) {
-          alert(err.response.data.error[0].message);
-        } else {
-          alert("Something bad happened. Try again.");
-        }
         console.log(err);
       });
   };

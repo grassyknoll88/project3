@@ -1,4 +1,4 @@
-.card {
+/* .card {
   background: #fff;
   border-radius: 2px;
   height: 250px;
@@ -19,4 +19,18 @@
 }
 .card > .img-container > img {
   width: 60%;
+} */
+
+.cardDiv {
+  height: 500px;
+  width: 400px;
+  display: inline-block;
+  margin-bottom: 100px;
+  margin-left: 200px;
+  margin-right: 100px;
+}
+
+img {
+  width: 400px;
+  height: 450px;
 }

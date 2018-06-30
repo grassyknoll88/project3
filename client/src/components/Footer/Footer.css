@@ -8,10 +8,15 @@ footer {
 }
 
 .list-unstyled {
-  margin-top: 4px;
   font-size: 18px;
-  padding: 6px;
+  padding: 10px;
   text-align: right;
+  display: inline;
+  margin-left: 40px;
+}
+
+.linkDiv {
+  margin-top: 60px;
 }
 
 a:hover {

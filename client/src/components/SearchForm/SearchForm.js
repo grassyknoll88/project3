@@ -3,86 +3,103 @@ import "./SearchForm.css";
 import { render } from "react-dom";
 import Downshift from "downshift";
 import API from "../../utils/API";
+import DogCards from "../DogCards/DogCards";
 
 export default class SearchForm extends React.Component {
   state = {
-    // items: [
-    //   // { value: "apple" },
-    //   // { value: "pear" },
-    //   // { value: "orange" },
-    //   // { value: "grape" },
-    //   // { value: "banana" }
-    // ],
-    items: []
+    items: [],
+    dogs: [],
+    results: []
   };
-  // constructor() {
-  //   super();
-  //   this.state.items = [
-  //     { value: "apple" },
-  //     { value: "pear" },
-  //     { value: "orange" },
-  //     { value: "grape" },
-  //     { value: "banana" }
-  //   ];
-  // }
 
   componentDidMount() {
     API.getDogs()
       .then(response => {
-        this.setState({ items: response.data });
+        this.setState({ dogs: response.data });
+        let states = this.state.dogs
+          .map(dog => {
+            return dog.state;
+          })
+          .filter((val, ix, arr) => {
+            return arr.indexOf(val) === ix;
+          })
+          .map(state => {
+            return { state: state };
+          });
+        this.setState({ items: states });
       })
       .catch(err => {
         console.log(err);
       });
   }
 
+  handleSelection(selectedVal) {
+    alert(`You selected ${selectedVal.state}`);
+    let results = this.state.dogs.filter(dog => {
+      return dog.state.toLowerCase() === selectedVal.state.toLowerCase();
+    });
+    this.setState({ results: results });
+  }
+
   render() {
     return (
-      <Downshift
-        onChange={selection => alert(`You selected ${selection.state}`)}
-        itemToString={item => (item ? item.state : "")}
-      >
-        {({
-          getInputProps,
-          getItemProps,
-          getLabelProps,
-          getMenuProps,
-          isOpen,
-          inputValue,
-          highlightedIndex,
-          selectedItem
-        }) => (
-          <div>
-            <label {...getLabelProps()}>Enter a state</label>
-            <input {...getInputProps()} />
-            <ul {...getMenuProps()}>
-              {isOpen
-                ? this.state.items
-                    .filter(
-                      item => !inputValue || item.state.includes(inputValue)
-                    )
-                    .map((item, index) => (
-                      <li
-                        {...getItemProps({
-                          key: item.state,
-                          index,
-                          item,
-                          style: {
-                            backgroundColor:
-                              highlightedIndex === index ? "red" : "white",
-                            fontWeight:
-                              selectedItem === item ? "bold" : "normal"
-                          }
-                        })}
-                      >
-                        {item.state}
-                      </li>
-                    ))
-                : null}
-            </ul>
-          </div>
-        )}
-      </Downshift>
+      <div>
+        <Downshift
+          onChange={selection => this.handleSelection(selection)}
+          itemToString={item => (item ? item.state : "")}
+        >
+          {({
+            getInputProps,
+            getItemProps,
+            getLabelProps,
+            getMenuProps,
+            isOpen,
+            inputValue,
+            highlightedIndex,
+            selectedItem
+          }) => (
+            <div>
+              <label {...getLabelProps()}>Enter a state</label>
+              <input {...getInputProps()} />
+              <ul {...getMenuProps()}>
+                {isOpen
+                  ? this.state.items
+                      .filter(
+                        item => !inputValue || item.state.includes(inputValue)
+                      )
+                      .map((item, index) => (
+                        <li
+                          {...getItemProps({
+                            key: item.state,
+                            index,
+                            item,
+                            style: {
+                              backgroundColor:
+                                highlightedIndex === index ? "red" : "white",
+                              fontWeight:
+                                selectedItem === item ? "bold" : "normal"
+                            }
+                          })}
+                        >
+                          {item.state}
+                        </li>
+                      ))
+                  : null}
+              </ul>
+            </div>
+          )}
+        </Downshift>
+
+        {this.state.results.map((results, i) => (
+          <DogCards
+            key={i}
+            pet_name={results.pet_name}
+            breed={results.breed}
+            city={results.city}
+            imgurl={results.imgurl}
+          />
+        ))}
+      </div>
     );
   }
 }

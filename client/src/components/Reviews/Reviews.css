@@ -12,6 +12,11 @@ button {
   text-decoration: none;
 }
 
+h2 {
+  font-size: 35px;
+  padding-top: 15px;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -24,10 +29,11 @@ button:focus {
   width: 100%;
   color: #6b7a8f;
   background-color: #fff;
-  border-radius: 0.875rem;
   padding: 0.2rem 1rem 2rem;
-  border: 1px solid #6b7a8f;
   margin-top: 25px;
+  -webkit-box-shadow: 2px 2px 4px 5px #ccc;
+  -moz-box-shadow: 2px 2px 4px 5px #ccc;
+  box-shadow: 2px 2px 4px 5px #ccc;
 }
 .comment-form {
   background-color: #fff;
@@ -39,11 +45,15 @@ button:focus {
   margin-bottom: 0.25rem;
 }
 
+#reviewText {
+  font-size: 22px;
+}
+
 .reviewName,
 textarea {
   border: none;
   border-bottom: 1px solid #6b7a8f;
-  font-size: 30px;
+  font-size: 18px;
   padding: 0.25rem 0;
   width: 97%;
   font-style: italic;
