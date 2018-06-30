@@ -21,7 +21,7 @@ module.exports = function(Sequelize, DataTypes) {
       notEmpty: true
     },
     city: {
-      type:  DataTypes.STRING,
+      type: DataTypes.STRING,
       notEmpty: true
     },
     state: {
@@ -51,10 +51,10 @@ module.exports = function(Sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true
-     //validate: {isEmail:true}
+      //validate: {isEmail:true}
     },
 
-    imgUrl: {
+    imgurl: {
       type: DataTypes.TEXT
     }
 
@@ -62,7 +62,7 @@ module.exports = function(Sequelize, DataTypes) {
     //     associate: function(models) {
     //         Dog.hasMany(models.Review);
     //     }
-    // } 
+    // }
   });
   Dog.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);

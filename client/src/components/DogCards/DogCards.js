@@ -13,7 +13,7 @@ const DogCards = props => {
   return (
     <div className="cardDiv">
       <Card>
-        <CardImage>{props.imgUrl}</CardImage>
+        <CardImage>{props.imgurl}</CardImage>
         <CardBody>
           <CardTitle>{props.pet_name}</CardTitle>
           <h5>{props.breed}</h5>

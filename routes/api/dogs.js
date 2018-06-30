@@ -44,8 +44,8 @@ module.exports = function(app) {
       zipcode: req.body.zipcode,
       size: req.body.size,
       description: req.body.description,
-      email: req.body.email
-      //imgurl: req.body.imgurl
+      email: req.body.email,
+      imgurl: req.body.imgurl
     }).then(function(dbDog) {
       console.log(dbDog);
       res.json(dbDog);
@@ -69,7 +69,6 @@ module.exports = function(app) {
       where: { id: id }
     });
   });
-
 };
 
 //doing nothing just trying to push to github

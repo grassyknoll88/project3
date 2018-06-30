@@ -96,7 +96,7 @@ export default class SearchForm extends React.Component {
             pet_name={results.pet_name}
             breed={results.breed}
             city={results.city}
-            imgUrl={results.imgUrl}
+            imgurl={results.imgurl}
           />
         ))}
       </div>
