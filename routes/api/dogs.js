@@ -53,7 +53,17 @@ module.exports = function(app) {
   });
 
   //route for reviews
-
+  app.post("/api/review", function(req, res) {
+    db.Review.create({
+      id:req.body.id,
+      dog_id: req.body.dog_id,
+      review: req.body.review
+    }).then(function(dbDog) {
+      console.log(dbDog);
+      res.json(dbDog);
+    });
+  });
+  
   //route for login
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     db.Dog.findOne({
@@ -69,6 +79,10 @@ module.exports = function(app) {
       where: { id: id }
     });
   });
-};
+
+
+}
+
+
 
 //doing nothing just trying to push to github

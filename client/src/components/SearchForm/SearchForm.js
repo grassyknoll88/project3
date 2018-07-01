@@ -92,7 +92,7 @@ export default class SearchForm extends React.Component {
 
         {this.state.results.map((results, i) => (
           <DogCards
-            id={i}
+            key={i}
             pet_name={results.pet_name}
             breed={results.breed}
             city={results.city}
