@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ProfilePic from "../components/ProfilePic/ProfilePic";
 import Reviews from "../components/Reviews/Reviews";
+import ProfilePage from "../components/ProfilePage/ProfilePage";
 
 class Profile extends Component {
   state = {};
@@ -9,7 +9,7 @@ class Profile extends Component {
     return (
       <div className="container-fluid">
         <div className="row" />
-        <ProfilePic />
+        <ProfilePage />
         <Reviews />
       </div>
     );
