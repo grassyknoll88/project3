@@ -13,10 +13,7 @@ module.exports = function(app) {
       attributes: {
         exclude: [
           "password",
-          "zipcode",
           "id",
-          "size",
-          "zipcode",
           "email",
           "createdAt",
           "updatedAt"
@@ -41,8 +38,6 @@ module.exports = function(app) {
       breed: req.body.breed,
       city: req.body.city,
       state: req.body.state,
-      zipcode: req.body.zipcode,
-      size: req.body.size,
       description: req.body.description,
       email: req.body.email,
       imgurl: req.body.imgurl
@@ -51,7 +46,28 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
-
+  // PUT route for updating dogs. We can get the updated dog data from req.body
+  app.put("/api/dogs", function(req, res) {
+    // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    db.Dog.update({
+      username: req.body.username,
+      password: req.body.password,
+      pet_name: req.body.pet_name,
+      breed: req.body.breed,
+      city: req.body.city,
+      state: req.body.state,
+      description: req.body.description,
+      email: req.body.email,
+      imgurl: req.body.imgurl
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbDog) {
+      res.json(dbDog);
+    });
+  });
   //route for reviews
   app.post("/api/review", function(req, res) {
     db.Review.create({

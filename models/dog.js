@@ -50,7 +50,7 @@ module.exports = function(Sequelize, DataTypes) {
     imgurl: {
       type: DataTypes.TEXT
     },
-    review_id: {
+    Review_id: {
       type: DataTypes.INTEGER
     },
 
