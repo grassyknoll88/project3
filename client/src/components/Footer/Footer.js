@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row, Footer } from "mdbreact";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 class FooterPage extends React.Component {
   render() {
