@@ -16,7 +16,8 @@ module.exports = function(app) {
           "id",
           "email",
           "createdAt",
-          "updatedAt"
+          "updatedAt",
+          "review_id"
         ]
       },
       order: [["state"]]
