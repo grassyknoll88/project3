@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
-import ResizeImage from "react-resize-image";
 import "./ImageUpload.css";
 
 class ImageUpload extends Component {

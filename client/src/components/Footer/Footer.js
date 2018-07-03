@@ -18,14 +18,39 @@ class FooterPage extends React.Component {
             </Col>
             <Col sm="6" className="linkDiv">
               <ul>
-                <li className="list-unstyled">
-                  <a href="#!">About Us</a>
+                <li
+                  className={
+                    window.location.pathname === "/" ||
+                    window.location.pathname === "/home"
+                      ? "nav-item active"
+                      : "nav-item"
+                  }
+                >
+                  <Link to="/" className="nav-link footer-link">
+                    About Us
+                  </Link>
                 </li>
-                <li className="list-unstyled">
-                  <a href="#!">Contact Us</a>
+                <li
+                  className={
+                    window.location.pathname === "/profile"
+                      ? "nav-item active"
+                      : "nav-item"
+                  }
+                >
+                  <Link to="/profile" className="nav-link footer-link">
+                    Contact Us
+                  </Link>
                 </li>
-                <li className="list-unstyled">
-                  <a href="#!">Sign Up</a>
+                <li
+                  className={
+                    window.location.pathname === "/signup"
+                      ? "nav-item active"
+                      : "nav-item"
+                  }
+                >
+                  <Link to="/signup" className="nav-link footer-link">
+                    Sign Up
+                  </Link>
                 </li>
               </ul>
             </Col>
