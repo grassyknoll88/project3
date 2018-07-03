@@ -12,14 +12,12 @@ module.exports = function(app) {
       //attributes that will not reflect on the dog card on the search page
       attributes: {
         exclude: [
-          "password",
-          "zipcode",
+          "password",       
           "id",
-          "size",
-          "zipcode",
           "email",
           "createdAt",
-          "updatedAt"
+          "updatedAt",
+          "review_id"
         ]
       },
       order: [["state"]]
@@ -41,8 +39,6 @@ module.exports = function(app) {
       breed: req.body.breed,
       city: req.body.city,
       state: req.body.state,
-      zipcode: req.body.zipcode,
-      size: req.body.size,
       description: req.body.description,
       email: req.body.email,
       imgurl: req.body.imgurl
