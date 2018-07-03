@@ -21,7 +21,7 @@ class ImageUpload extends Component {
   };
 
   handleUploadSuccess = filename => {
-    this.setState({ avatar: filename, progress: 100, isUploading: false });
+    this.setState({ avatar: filename, isUploading: false });
     firebase
       .storage()
       .ref("images")
@@ -82,7 +82,7 @@ class ImageUpload extends Component {
           <div className="mt-5">
             <form>
               <label className="upload-text">Choose your profile picture</label>
-              {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
+              {this.state.isUploading}
               <br />
               <FileUploader
                 accept="image/*"

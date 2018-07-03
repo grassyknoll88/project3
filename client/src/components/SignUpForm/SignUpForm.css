@@ -21,9 +21,9 @@ input[type="password"] {
 }
 
 .renderedImg {
-  max-width: 300px;
-  max-height: 150px;
+  width: 250px;
   float: right;
   margin-right: 100px;
   image-orientation: from-image;
+  overflow: hidden;
 }
