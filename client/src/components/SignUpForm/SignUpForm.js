@@ -37,6 +37,9 @@ class SignUpForm extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
+    this.props.onFormSubmit({
+      ...this.state
+    });
     this.setState ({submitted: true});
     
   };
