@@ -28,6 +28,7 @@ export default class ModalComponent extends React.Component {
           <form className="form">
             <input
               className="usernameInput"
+              id="username"
               value={this.state.username}
               name="username"
               onChange={this.handleInputChange}
@@ -37,6 +38,7 @@ export default class ModalComponent extends React.Component {
             <br />
             <input
               className="passwordInput"
+              id="password"
               value={this.state.password}
               name="password"
               onChange={this.handleInputChange}
