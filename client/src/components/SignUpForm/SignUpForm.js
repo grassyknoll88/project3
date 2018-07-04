@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./SignUpForm.css";
 import ImageUpload from "../ImageUpload/ImageUpload";
+import API from "../../utils/API";
+import { Redirect } from "react-router-dom";
+
 
 class SignUpForm extends Component {
   // Setting the component's initial state
@@ -14,7 +17,9 @@ class SignUpForm extends Component {
     size: "",
     description: "",
     email: "",
-    imgUrl: ""
+    imgUrl: "",
+
+    submitted: false
   };
 
   handleInputChange = event => {
@@ -32,9 +37,8 @@ class SignUpForm extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    this.props.onFormSubmit({
-      ...this.state
-    });
+    this.setState ({submitted: true});
+    
   };
 
   onComplete = imgurl => {
@@ -43,11 +47,16 @@ class SignUpForm extends Component {
   };
 
   render() {
+    let redirect = null;
+    if (this.state.submitted){
+      redirect = <Redirect to= "/profile" />;
+    }
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
         <div className="container">
+          {redirect}
           <form className="form">
             <input
               value={this.state.email}
@@ -78,7 +87,7 @@ class SignUpForm extends Component {
               name="state"
               onChange={this.handleInputChange}
               type="text"
-              placeholder="What state do you live in? (STATE INITIALS)"
+              placeholder="What state do you live in?"
             />
             <br />
             <input
