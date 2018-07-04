@@ -56,7 +56,7 @@ class SignUpForm extends Component {
       <div>
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
         <div className="container">
-          {redirect}
+        {redirect}
           <form className="form">
             <input
               value={this.state.email}
