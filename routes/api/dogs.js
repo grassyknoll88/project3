@@ -1,8 +1,9 @@
-// var express = require("express");
-var router = require("express").Router();
+// const express = require("express");
+const router = require("express").Router();
 // grabbing our models
-var db = require("../../models");
-var passport = require("../../config/passport");
+const db = require("../../models");
+const passport = require("../../config/passport");
+
 
 module.exports = function(app) {
   // get route, edited to match sequelize
@@ -61,7 +62,7 @@ module.exports = function(app) {
   });
   
   //route for login
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("jwt"), function(req, res) {
     db.Dog.findOne({
       email: req.body.email,
       password: req.body.password

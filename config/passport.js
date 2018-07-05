@@ -1,18 +1,25 @@
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
-var bcrypt = require("bcrypt-nodejs");
-var jwt = require("jsonwebtoken");
+const passport = require("passport");
+//const LocalStrategy = require("passport-local").Strategy;
+//const bcrypt = require("bcrypt-nodejs");
+const JwtStrategy = require ("passport-jwt").Strategy;
+const ExtractJwt = require ("passport-jwt").ExtractJwt;
+const jwt = require("jsonwebtoken");
+const db = require("../models");
+const keys = require ("./keys");
 
-var db = require("../models");
+
+const opts = {};
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.secretOrKey = keys.secretOrKey;
 
 // Telling passport we want to login with a username/email and password
 passport.use(
-  new LocalStrategy(
-    // User will sign in using an email, rather than a "username"
-    {
-      usernameField: "email"
-    },
-    function (email, password, done) {
+  new JwtStrategy (opts,
+        // User will sign in using an email, rather than a "username"
+        // {
+        //   usernameField: "email"
+        // },  
+    function (jwt_payload, done) {
       // When a user tries to sign in this code runs
       db.Dog.findOne({
         where: {
@@ -38,7 +45,7 @@ passport.use(
           //Sign the token
           jwt.sign(
             payload,
-            null, //DO I NEED A CONFIG/KEYS FILE?????
+            keys.secretOrKey, 
             { expiresIn: 3600 },
             (err, token) => {
               res.json({
@@ -55,6 +62,7 @@ passport.use(
         });
     }
   )
+
 );
 
 // In order to help keep authentication state across HTTP requests,
