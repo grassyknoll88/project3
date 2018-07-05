@@ -1,5 +1,7 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
+var bcrypt = require("bcrypt-nodejs");
+var jwt = require("jsonwebtoken");
 
 var db = require("../models");
 
@@ -10,14 +12,14 @@ passport.use(
     {
       usernameField: "email"
     },
-    function(email, password, done) {
+    function (email, password, done) {
       // When a user tries to sign in this code runs
       db.Dog.findOne({
         where: {
           email: email
         }
       })
-        .then(function(dbUser) {
+        .then(function (dbUser) {
           // If there's no user with the given email
           if (!dbUser) {
             return done(null, false, {
@@ -32,6 +34,21 @@ passport.use(
           }
           // If none of the above, return the user
           return done(null, dbUser);
+          const payload = { id: dbUser.id, username: dbUser.username, img: dbUser.imgurl } //create JWT payload
+          //Sign the token
+          jwt.sign(
+            payload,
+            null, //DO I NEED A CONFIG/KEYS FILE?????
+            { expiresIn: 3600 },
+            (err, token) => {
+              res.json({
+                success: true,
+                token: "Bearer " + token
+              })
+
+            }
+          );
+
         })
         .catch(error => {
           console.log(error);
@@ -42,11 +59,11 @@ passport.use(
 
 // In order to help keep authentication state across HTTP requests,
 
-passport.serializeUser(function(user, cb) {
+passport.serializeUser(function (user, cb) {
   cb(null, user);
 });
 
-passport.deserializeUser(function(obj, cb) {
+passport.deserializeUser(function (obj, cb) {
   cb(null, obj);
 });
 
