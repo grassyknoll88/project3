@@ -25,7 +25,7 @@ export const loginUser = userData => dispatch => {
         //save to localStorage
         const { token } = res.data;
         //set token to ls
-        localStorage.setItem("jwtToke", token);
+        localStorage.setItem("jwtToken", token);
         //set token to Auth header
         setAuthToken(token);
         //Decodes token to get the user data that's logged in
@@ -34,10 +34,11 @@ export const loginUser = userData => dispatch => {
         dispatch(setCurrentUser(decoded))
     })
     .catch(err =>  
-        dispatch({
-            //type: GET_ERRORS,   
-            //payload: err.response.data *WORK ON ERRORS IN TYPES*
-        })
+        console.log(err)
+        // dispatch({
+        //     //type: GET_ERRORS,   
+        //     //payload: err.response.data *WORK ON ERRORS IN TYPES*
+        // })
     )
 };
 

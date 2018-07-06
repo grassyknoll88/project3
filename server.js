@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-var passport = require("./config/passport")//(passport);
+var passport = require("passport")//(passport);
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -31,6 +31,7 @@ app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
 );
 app.use(passport.initialize());
+require ("./config/passport")(passport);
 app.use(passport.session());
 
 // image s3 uploader config

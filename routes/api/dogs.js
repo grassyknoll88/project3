@@ -1,8 +1,9 @@
-// const express = require("express");
-const router = require("express").Router();
+// var express = require("express");
+var router = require("express").Router();
 // grabbing our models
-const db = require("../../models");
-const passport = require("../../config/passport");
+var db = require("../../models");
+var passport = require("../../config/passport");
+var passport = require("passport");
 
 
 module.exports = function(app) {
@@ -30,7 +31,7 @@ module.exports = function(app) {
   });
 
   // post route to create dogs
-  app.post("/api/signup", function(req, res) {
+  app.post("/api/signup", passport.authenticate("jwt"), function(req, res) {
     //or api/users
     db.Dog.create({
       id: req.body.id,
@@ -49,17 +50,17 @@ module.exports = function(app) {
     });
   });
 
-  //route for reviews
-  app.post("/api/review", function(req, res) {
-    db.Review.create({
-      id:req.body.id,
-      dog_id: req.body.dog_id,
-      review: req.body.review
-    }).then(function(dbDog) {
-      console.log(dbDog);
-      res.json(dbDog);
-    });
-  });
+  // //route for reviews
+  // app.post("/api/review", function(req, res) {
+  //   db.Review.create({
+  //     id:req.body.id,
+  //     dog_id: req.body.dog_id,
+  //     review: req.body.review
+  //   }).then(function(dbDog) {
+  //     console.log(dbDog);
+  //     res.json(dbDog);
+  //   });
+  // });
   
   //route for login
   app.post("/api/login", passport.authenticate("jwt"), function(req, res) {
@@ -74,9 +75,12 @@ module.exports = function(app) {
   app.get("/api/profile", function(req, res) {
     db.Dog.findOne({
       where: { id: id }
-    });
+    }).then(function(dbDog) {
+      res.json(dbDog);
   });
+})
 
-
+  app.get("/api/current", passport.authenticate("jwt"), function (req, res){
+    res.json({msg: "Success"});
+  });
 }
-

@@ -1,22 +1,55 @@
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions"
+import classnames from "classnames";
+
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-responsive-modal";
 import { Container, Row, Col, Input, Button } from "mdbreact";
 import "./Modal.css";
-import { Redirect } from "react-router-dom";
 
-export default class ModalComponent extends React.Component {
+class ModalComponent extends React.Component {
   state = {
     open: false,
-    submitted: false
+    username: "",
+    password: "",
+    
   };
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
+    console.log("name = ", name);
+    console.log("value = ", value);
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.auth.isAuthenticated){
+      this.props.history.push("/profile")
+    }
+
+    if(nextProps.errors) {
+      this.setState({errors: nextProps.errors})
+    }
+  }
 
   onOpenModal = () => {
     this.setState({ open: true });
     
   };
-  handleJoinSubmit = ()=>{
-    this.setState ({submitted: true});
+  handleLoginSubmit = ()=>{
+    let userData = {
+      username: this.state.username,
+      password: this.state.password,
+    }
+    this.props.loginUser(userData)
+
   }
 
   onCloseModal = () => {
@@ -26,17 +59,15 @@ export default class ModalComponent extends React.Component {
 
   render() {
     const { open } = this.state;
-    let redirect = null;
-    if (this.state.submitted){
-      redirect = <Redirect to= "/profile" />;
-    }
+    //const { errors }= this.state
+    
     return (
       <div>
         <button id="joinUs" className="btn hvr-grow" onClick={this.onOpenModal}>
           JOIN US
         </button>
         <Modal open={open} onClose={this.onCloseModal} center>
-          {redirect}
+         
           <form className="form">
             <input
               className="usernameInput"
@@ -45,6 +76,7 @@ export default class ModalComponent extends React.Component {
               name="username"
               onChange={this.handleInputChange}
               type="text"
+              //className={classnames("form-control form-control-lg", {"is-invalid": errors.usernameInput})}
               placeholder="Username"
             />
             <br />
@@ -55,11 +87,12 @@ export default class ModalComponent extends React.Component {
               name="password"
               onChange={this.handleInputChange}
               type="password"
+              //className={classnames("form-control form-control-lg", {"is-invalid": errors.passwordInput})}
               placeholder="Password"
             />
             <br />
-            <button className="submitButton" onClick={this.handleJoinSubmit}>
-              Submit
+            <button className="submitButton" onClick={this.handleLoginSubmit}>
+              Login
             </button>
             <h1>
               Don't have an account yet?{" "}
@@ -73,5 +106,20 @@ export default class ModalComponent extends React.Component {
     );
   }
 }
+
+Modal.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+
+})
+
+export default connect(mapStateToProps, { loginUser})(ModalComponent);
+
 
 // ReactDOM.render(<ModalCompgonent />, document.getElementById("app"));

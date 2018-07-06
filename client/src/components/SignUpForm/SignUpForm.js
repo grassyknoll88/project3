@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types"
 import { connect } from "react-redux";
-import { registerUser } from "../../actions/authActions"
+import { registerUser } from "../../actions/authActions";
+import classnames from "classnames";
 import "./SignUpForm.css";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import API from "../../utils/API";
@@ -20,7 +21,8 @@ class SignUpForm extends Component {
     size: "",
     description: "",
     email: "",
-    imgUrl: ""
+    imgUrl: "",
+    //errors: {}
 
   };
 
@@ -68,7 +70,7 @@ class SignUpForm extends Component {
 
 
   render() {
-    const { errors } = this.state;
+    //const { errors } = this.state;
     const { user } = this.props.auth
     
     // Notice how each input has a `value`, `name`, and `onChange` prop
@@ -83,6 +85,7 @@ class SignUpForm extends Component {
               name="email"
               onChange={this.handleInputChange}
               type="text"
+              //className={classnames("form-control form-control-lg", {"is-invalid": errors.email})}
               placeholder="Please enter your email address"
             />
             <br />
@@ -91,14 +94,17 @@ class SignUpForm extends Component {
               name="username"
               onChange={this.handleInputChange}
               type="text"
+              //className={classnames("form-control form-control-lg", {"is-invalid": errors.username})}
               placeholder="Please enter a username"
             />
+            
             <br />
             <input
               value={this.state.password}
               name="password"
               onChange={this.handleInputChange}
               type="password"
+              //className={classnames("form-control form-control-lg", {"is-invalid": errors.password})}
               placeholder="Please enter a password"
             />
             <br />
@@ -164,4 +170,4 @@ const mapStateToProps = (state)=> ({
   auth: state.auth
 })
 
-export default connect(mapStateToProps, {registerUser })(SignUpForm);
+export default connect(mapStateToProps, { registerUser })(SignUpForm);

@@ -1,8 +1,13 @@
+//***ARE YOU USING THIS PAGE AT ALL??/
+
 import React from "react";
 import { Container, Row, Col, Input, Button } from "mdbreact";
 
 class LogInPage extends React.Component {
+
+
   render() {
+   
     return (
       <Container>
         <Row>
@@ -37,5 +42,6 @@ class LogInPage extends React.Component {
     );
   }
 }
+
 
 export default LogInPage;
