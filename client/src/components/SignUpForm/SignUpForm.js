@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types"
+import { connect } from "react-redux";
+import { registerUser } from "../../actions/authActions"
 import "./SignUpForm.css";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import API from "../../utils/API";
-import { Redirect } from "react-router-dom";
+
 
 
 class SignUpForm extends Component {
@@ -17,9 +20,8 @@ class SignUpForm extends Component {
     size: "",
     description: "",
     email: "",
-    imgUrl: "",
+    imgUrl: ""
 
-    submitted: false
   };
 
   handleInputChange = event => {
@@ -37,10 +39,25 @@ class SignUpForm extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    this.props.onFormSubmit({
-      ...this.state
-    });
-    this.setState ({submitted: true});
+
+    const newUser={
+    username: this.state.username,
+    password: this.state.password,
+    pet_name: this.state.pet_name,
+    state: this.state.state,
+    city: this.state.city,
+    breed: this.state.breed,
+    size: this.state.size,
+    description: this.state.description,
+    email: this.state.email,
+    imgUrl: this.state.imgurl
+    }
+    this.props.registerUser(newUser)
+
+    // this.props.onFormSubmit({
+    //   ...this.state
+    // });
+    
     
   };
 
@@ -49,18 +66,18 @@ class SignUpForm extends Component {
     this.setState({ imgurl: imgurl });
   };
 
+
   render() {
-    let redirect = null;
-    if (this.state.submitted){
-      redirect = <Redirect to= "/profile" />;
-    }
+    const { errors } = this.state;
+    const { user } = this.props.auth
+    
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
         <div className="container">
-        {redirect}
           <form className="form">
+          
             <input
               value={this.state.email}
               name="email"
@@ -138,4 +155,13 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm;
+SignUpForm.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state)=> ({
+  auth: state.auth
+})
+
+export default connect(mapStateToProps, {registerUser })(SignUpForm);
