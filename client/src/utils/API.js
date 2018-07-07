@@ -10,9 +10,9 @@ export default {
 
   review: function(data) {
     return axios.post("/api/review", data);
-  
+  },
+
   getProfile: function(id) {
     return axios.get("/api/profile/" + id);
-
   }
 };
