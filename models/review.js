@@ -6,20 +6,7 @@ module.exports = function(Sequelize, DataTypes) {
 			primaryKey: true, 
 			type: DataTypes.INTEGER
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     notEmpty: true
-        //user_id logged in pull from passport
-        
-        // },
-		// reviewer_id: { 
-		// 	type: DataTypes.STRING,
-		// 	notEmpty: true
-        // },
-        // reviewed_id: { 
-		// 	type: DataTypes.INTEGER,
-		// 	notEmpty: true
-		// },
+  
         review: {
             type: DataTypes.TEXT,
             validate: {

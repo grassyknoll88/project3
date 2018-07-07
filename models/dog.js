@@ -26,7 +26,15 @@ module.exports = function(Sequelize, DataTypes) {
     },
     state: {
       type: DataTypes.STRING,
-      notEmpty: true
+      isUpperCase: true,
+      notEmpty: true,
+      validate: {
+        len: [2,2],
+   
+        
+        // isPostalCode: true
+      }
+      
     },
 
     breed: {
