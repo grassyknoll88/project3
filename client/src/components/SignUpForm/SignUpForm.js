@@ -4,7 +4,6 @@ import ImageUpload from "../ImageUpload/ImageUpload";
 import API from "../../utils/API";
 import { Redirect } from "react-router-dom";
 
-
 class SignUpForm extends Component {
   // Setting the component's initial state
   state = {
@@ -40,8 +39,7 @@ class SignUpForm extends Component {
     this.props.onFormSubmit({
       ...this.state
     });
-    this.setState ({submitted: true});
-    
+    this.setState({ submitted: true });
   };
 
   onComplete = imgurl => {
@@ -51,15 +49,15 @@ class SignUpForm extends Component {
 
   render() {
     let redirect = null;
-    if (this.state.submitted){
-      redirect = <Redirect to= "/profile" />;
+    if (this.state.submitted) {
+      redirect = <Redirect to="/profile" />;
     }
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
         <div className="container">
-        {redirect}
+          {redirect}
           <form className="form">
             <input
               value={this.state.email}
