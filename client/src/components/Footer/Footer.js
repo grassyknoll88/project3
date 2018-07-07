@@ -30,16 +30,8 @@ class FooterPage extends React.Component {
                     About Us
                   </Link>
                 </li>
-                <li
-                  className={
-                    window.location.pathname === "/profile"
-                      ? "nav-item active"
-                      : "nav-item"
-                  }
-                >
-                  <Link to="/profile" className="nav-link footer-link">
-                    Contact Us
-                  </Link>
+                <li className="nav-item active nav-link footer-link nav-item">
+                  <a href="puplifeku@gmail.com">Contact Us</a>
                 </li>
                 <li
                   className={
