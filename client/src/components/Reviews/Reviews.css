@@ -58,6 +58,7 @@ textarea {
   width: 97%;
   font-style: italic;
   height: 45px;
+  opacity: 0.5;
 }
 
 .postReviewBtn {
