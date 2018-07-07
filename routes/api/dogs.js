@@ -11,7 +11,12 @@ module.exports = function(app) {
     db.Dog.findAll({
       //attributes that will not reflect on the dog card on the search page
       attributes: {
-        exclude: ["password", "email", "createdAt", "updatedAt", "review_id"]
+
+        exclude: [
+          "password",       
+
+        ]
+
       },
       order: [["state"]]
     })
@@ -53,6 +58,32 @@ module.exports = function(app) {
     });
   });
 
+    // PUT route for updating dogs. We can get the updated dog data from req.body
+    app.put("/api/update", function(req, res) {
+      // Update takes in an object describing the properties we want to update, and
+      // we use where to describe which objects we want to update
+      db.Dog.update({
+        username: req.body.username,
+        password: req.body.password,
+        pet_name: req.body.pet_name,
+        breed: req.body.breed,
+        city: req.body.city,
+        state: req.body.state,
+        description: req.body.description,
+        email: req.body.email,
+        imgurl: req.body.imgurl
+      }, {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbDog) {
+        res.json(dbDog);
+      });
+    });
+  
+
+
+
   //route for login
   app.post("/api/login", passport.authenticate("jwt"), function(req, res) {
     db.Dog.findOne({
@@ -73,4 +104,6 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+
 };
+

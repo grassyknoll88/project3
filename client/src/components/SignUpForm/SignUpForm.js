@@ -3,6 +3,23 @@ import "./SignUpForm.css";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import API from "../../utils/API";
 import { Redirect } from "react-router-dom";
+import validator from 'validator';
+import Form from 'react-validation/build/form';
+import Input from 'react-validation/build/input';
+
+
+const required = (value) => {
+  if (!value.toString().trim().length) {
+
+    return 'require';
+  }
+};
+
+const email = (value) => {
+  if(!validator.isEmail(value)) {
+    return `${value} is not a valid email.`
+  }
+}; 
 
 class SignUpForm extends Component {
   // Setting the component's initial state
@@ -57,17 +74,18 @@ class SignUpForm extends Component {
       <div>
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
         <div className="container">
-          {redirect}
-          <form className="form">
-            <input
+        {redirect}
+          <Form className="form">
+            <Input
               value={this.state.email}
               name="email"
               onChange={this.handleInputChange}
               type="text"
+              validations={[required, email]}
               placeholder="Please enter your email address"
             />
             <br />
-            <input
+            <Input
               value={this.state.username}
               name="username"
               onChange={this.handleInputChange}
@@ -75,7 +93,7 @@ class SignUpForm extends Component {
               placeholder="Please enter a username"
             />
             <br />
-            <input
+            <Input
               value={this.state.password}
               name="password"
               onChange={this.handleInputChange}
@@ -83,15 +101,16 @@ class SignUpForm extends Component {
               placeholder="Please enter a password"
             />
             <br />
-            <input
+            <Input
               value={this.state.state}
               name="state"
               onChange={this.handleInputChange}
               type="text"
+              maxLength="2"
               placeholder="What state do you live in?"
             />
             <br />
-            <input
+            <Input
               value={this.state.city}
               name="city"
               onChange={this.handleInputChange}
@@ -99,7 +118,7 @@ class SignUpForm extends Component {
               placeholder="What city do you live in?"
             />
             <br />
-            <input
+            <Input
               value={this.state.pet_name}
               name="pet_name"
               onChange={this.handleInputChange}
@@ -108,7 +127,7 @@ class SignUpForm extends Component {
             />
             <br />
 
-            <input
+            <Input
               value={this.state.breed}
               name="breed"
               onChange={this.handleInputChange}
@@ -116,7 +135,7 @@ class SignUpForm extends Component {
               placeholder="What breed is your dog?"
             />
             <br />
-            <input
+            <Input
               value={this.state.description}
               name="description"
               onChange={this.handleInputChange}
@@ -129,7 +148,7 @@ class SignUpForm extends Component {
             <button onClick={this.handleFormSubmit} className="signUpSubmitBtn">
               Submit
             </button>
-          </form>
+          </Form>
         </div>
       </div>
     );
