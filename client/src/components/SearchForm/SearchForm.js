@@ -59,9 +59,12 @@ export default class SearchForm extends React.Component {
             selectedItem
           }) => (
             <div>
-              <label {...getLabelProps()}>Enter a state</label>
-              <input {...getInputProps()} />
-              <ul {...getMenuProps()}>
+              <label class="stateLabel" {...getLabelProps()}>
+                Enter a state
+              </label>
+              <br />
+              <input class="stateInput" {...getInputProps()} />
+              <ul class="options" {...getMenuProps()}>
                 {isOpen
                   ? this.state.items
                       .filter(
@@ -75,7 +78,9 @@ export default class SearchForm extends React.Component {
                             item,
                             style: {
                               backgroundColor:
-                                highlightedIndex === index ? "red" : "white",
+                                highlightedIndex === index
+                                  ? "whitesmoke"
+                                  : "white",
                               fontWeight:
                                 selectedItem === item ? "bold" : "normal"
                             }
