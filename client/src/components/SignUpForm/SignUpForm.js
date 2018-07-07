@@ -73,7 +73,7 @@ class SignUpForm extends Component {
     return (
       <div>
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
-        <div className="container"
+        <div className="container">
         {redirect}
           <Form className="form">
             <Input
