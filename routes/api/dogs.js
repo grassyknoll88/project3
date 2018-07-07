@@ -50,6 +50,7 @@ module.exports = function(app) {
   app.post("/api/review", function(req, res) {
     db.Review.create({
       id: req.body.id,
+      reviewer: req.body.reviewer,
       dog_id: req.body.dog_id,
       review: req.body.review
     }).then(function(dbDog) {
