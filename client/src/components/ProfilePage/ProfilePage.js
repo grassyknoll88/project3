@@ -13,16 +13,11 @@ class ProfilePage extends Component {
   render() {
     return (
       <Card reverse>
-        <CardImage
-          className="img-fluid"
-          src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
-        />
+        <CardImage className="img-fluid" src={this.props.imgurl} />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardText>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </CardText>
+          <CardTitle>{this.props.pet_name}</CardTitle>
+          <CardText>{this.props.city}</CardText>
+          <CardText>{this.props.description}</CardText>
           <Button />
         </CardBody>
       </Card>
