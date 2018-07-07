@@ -59,7 +59,7 @@ module.exports = function(app) {
   });
 
     // PUT route for updating dogs. We can get the updated dog data from req.body
-    app.put("/api/dogs", function(req, res) {
+    app.put("/api/update", function(req, res) {
       // Update takes in an object describing the properties we want to update, and
       // we use where to describe which objects we want to update
       db.Dog.update({
