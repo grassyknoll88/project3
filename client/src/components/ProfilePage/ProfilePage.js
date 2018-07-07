@@ -12,13 +12,12 @@ import {
 class ProfilePage extends Component {
   render() {
     return (
-      <Card reverse>
-        <CardImage className="img-fluid" src={this.props.imgurl} />
+      <Card className="dogCard" reverse>
+        <CardImage className="img-fluid profileImg" src={this.props.imgurl} />
         <CardBody>
-          <CardTitle>{this.props.pet_name}</CardTitle>
-          <CardText>{this.props.city}</CardText>
-          <CardText>{this.props.description}</CardText>
-          <Button />
+          <CardTitle id="petName">{this.props.pet_name}</CardTitle>
+          <CardText id="city">{this.props.city}</CardText>
+          <CardText id="description">{this.props.description}</CardText>
         </CardBody>
       </Card>
     );

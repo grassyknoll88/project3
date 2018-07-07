@@ -1,0 +1,27 @@
+.dogCard {
+  margin-top: 50px;
+  text-align: center;
+  color: #6b7a8f;
+  border-radius: 25px;
+}
+
+#petName {
+  font-size: 60px;
+  color: #6b7a8f;
+}
+
+#city,
+#description {
+  font-size: 40px;
+  color: #6b7a8f;
+}
+
+.profileImg {
+  display: block;
+  margin: auto;
+}
+
+.view {
+  background-color: rgba(247, 195, 49, 0.65);
+  border-radius: 25px;
+}
