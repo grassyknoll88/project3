@@ -7,6 +7,9 @@ export default {
   getDogs: function() {
     return axios.get("/api/dogs");
   },
+  getProfile: function(id) {
+    return axios.get("/api/profile/" + id);
+  }
   // getProfile: function (){
   //   return axios.get("/api/profile");
   // }
