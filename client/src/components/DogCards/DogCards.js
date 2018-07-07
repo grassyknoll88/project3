@@ -10,6 +10,7 @@ import {
 import "./DogCards.css";
 
 const DogCards = props => {
+  console.log("PROPS: ", props);
   return (
     <div className="cardDiv">
       <Card>
@@ -18,7 +19,7 @@ const DogCards = props => {
           <CardTitle>{props.pet_name}</CardTitle>
           <h5>{props.breed}</h5>
           <CardText>{props.city}</CardText>
-          <Button href="#">Button</Button>
+          <Button href={"/profile/" + props.id}>Profile</Button>
         </CardBody>
       </Card>
     </div>

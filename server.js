@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-var passport = require("./config/passport")//(passport);
+var passport = require("./config/passport"); //(passport);
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -13,8 +13,8 @@ var PORT = process.env.PORT || 3001;
 // console.log(process.env.AWS_SHARED_CREDENTIAL_FILE);
 process.env["AWS_ACCESS_KEY_ID"] = "AKIAJLGBMF5ZLFYVJBUQ";
 process.env["AWS_SECRET_ACCESS_KEY"] =
-  "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"; 
- 
+  "zsoPQkr7TCy9hzP3X7AbDpC8nnuE7fdXPhc7s3du";
+
 // Sets up the Express app to handle data parsing
 
 var db = require("./models");
@@ -60,7 +60,7 @@ var router = require("./routes/api/dogs.js")(app);
 //app.use(router);
 // Starts the server to begin listening
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

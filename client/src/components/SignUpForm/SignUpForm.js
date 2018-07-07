@@ -7,6 +7,7 @@ import validator from 'validator';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
 
+
 const required = (value) => {
   if (!value.toString().trim().length) {
 
@@ -55,8 +56,7 @@ class SignUpForm extends Component {
     this.props.onFormSubmit({
       ...this.state
     });
-    this.setState ({submitted: true});
-    
+    this.setState({ submitted: true });
   };
 
   onComplete = imgurl => {
@@ -66,14 +66,14 @@ class SignUpForm extends Component {
 
   render() {
     let redirect = null;
-    if (this.state.submitted){
-      redirect = <Redirect to= "/profile" />;
+    if (this.state.submitted) {
+      redirect = <Redirect to="/profile" />;
     }
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
-        <div className="container">
+        <div className="container"
         {redirect}
           <Form className="form">
             <Input

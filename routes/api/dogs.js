@@ -4,7 +4,6 @@ const router = require("express").Router();
 const db = require("../../models");
 const passport = require("../../config/passport");
 
-
 module.exports = function(app) {
   // get route, edited to match sequelize
   app.get("/api/dogs", (req, res) => {
@@ -12,10 +11,12 @@ module.exports = function(app) {
     db.Dog.findAll({
       //attributes that will not reflect on the dog card on the search page
       attributes: {
+
         exclude: [
           "password",       
 
         ]
+
       },
       order: [["state"]]
     })
@@ -48,7 +49,7 @@ module.exports = function(app) {
   //route for reviews
   app.post("/api/review", function(req, res) {
     db.Review.create({
-      id:req.body.id,
+      id: req.body.id,
       dog_id: req.body.dog_id,
       review: req.body.review
     }).then(function(dbDog) {
@@ -56,6 +57,7 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+
     // PUT route for updating dogs. We can get the updated dog data from req.body
     app.put("/api/dogs", function(req, res) {
       // Update takes in an object describing the properties we want to update, and
@@ -79,6 +81,9 @@ module.exports = function(app) {
       });
     });
   
+
+
+
   //route for login
   app.post("/api/login", passport.authenticate("jwt"), function(req, res) {
     db.Dog.findOne({
@@ -89,11 +94,16 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/profile", function(req, res) {
+  app.get("/api/profile/:id", function(req, res) {
     db.Dog.findOne({
-      where: { id: id }
+      attributes: {
+        exclude: ["password"]
+      },
+      where: { id: req.params.id }
+    }).then(function(dbDog) {
+      res.json(dbDog);
     });
   });
 
+};
 
-}
