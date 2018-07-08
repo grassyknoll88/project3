@@ -20,9 +20,13 @@ input[type="password"] {
   padding-top: 50px;
 }
 
+.searchForm {
+  margin-bottom: 50px;
+}
+
 .renderedImg {
-  width: 200px;
-  height: 150px;
+  width: 300px;
+  height: 185px;
   float: right;
   margin-right: 100px;
   image-orientation: from-image;

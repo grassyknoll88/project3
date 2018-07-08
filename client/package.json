@@ -13,6 +13,8 @@
     "react-dropzone": "^4.2.11",
     "react-dropzone-s3-uploader": "^1.1.0",
     "react-firebase-file-uploader": "^2.4.2",
+    "react-mailto": "^0.4.0",
+    "react-protected-mailto": "^1.0.3",
     "react-resize-image": "^1.0.4",
     "react-responsive-modal": "^3.0.3",
     "react-router-dom": "^4.3.1",
