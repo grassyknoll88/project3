@@ -37,13 +37,13 @@ class Reviews extends React.Component {
     );
   } // end render
 
-  _addComment(dog_id, review) {
+  _addComment(reviewer, review) {
     const comment = {
       id: this.state.comments.length + 1,
-      dog_id,
+      reviewer,
       review
     };
-    API.review({ dog_id: dog_id, review: review }).then(response => {
+    API.review({ reviewer: reviewer, review: review }).then(response => {
       console.log(response);
     });
     this.setState({ comments: this.state.comments.concat([comment]) }); // *new array references help React stay fast, so concat works better than push here.
@@ -59,7 +59,7 @@ class Reviews extends React.Component {
     return this.state.comments.map(comment => {
       return (
         <Comment
-          dog_id={comment.dog_id}
+          reviewer={comment.reviewer}
           review={comment.review}
           key={comment.id}
         />
@@ -109,9 +109,9 @@ class CommentForm extends React.Component {
 
   _handleSubmit(event) {
     event.preventDefault(); // prevents page from reloading on submit
-    let dog_id = this._author;
+    let reviewer = this._author;
     let review = this._review;
-    this.props.addComment(dog_id.value, review.value);
+    this.props.addComment(reviewer.value, review.value);
   }
 } // end CommentForm component
 
@@ -119,7 +119,7 @@ class Comment extends React.Component {
   render() {
     return (
       <div className="comment">
-        <p className="comment-header">{this.props.dog_id}</p>
+        <p className="comment-header">{this.props.reviewer}</p>
         <p className="comment-body">- {this.props.body}</p>
         <div className="comment-footer" />
       </div>
