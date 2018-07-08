@@ -16,7 +16,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="row" />
         <ProfilePage
           pet_name={this.state.profile.pet_name}

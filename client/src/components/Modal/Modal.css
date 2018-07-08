@@ -6,6 +6,11 @@
   font-size: 25px;
   background-color: #f7882f;
   color: white;
+  border-radius: 25px;
+}
+
+.styles_modal__gNwvD {
+  border-radius: 25px;
 }
 
 input[type="text"],
@@ -28,6 +33,7 @@ input::placeholder {
   margin-left: 20rem;
   font-size: 3rem;
   position: relative;
+  border-radius: 25px;
 }
 
 #username,

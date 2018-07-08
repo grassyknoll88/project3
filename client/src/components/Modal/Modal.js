@@ -13,22 +13,20 @@ export default class ModalComponent extends React.Component {
 
   onOpenModal = () => {
     this.setState({ open: true });
-    
   };
-  handleJoinSubmit = ()=>{
-    this.setState ({submitted: true});
-  }
+  handleJoinSubmit = () => {
+    this.setState({ submitted: true });
+  };
 
   onCloseModal = () => {
     this.setState({ open: false });
-    
   };
 
   render() {
     const { open } = this.state;
     let redirect = null;
-    if (this.state.submitted){
-      redirect = <Redirect to= "/profile" />;
+    if (this.state.submitted) {
+      redirect = <Redirect to="/profile" />;
     }
     return (
       <div>
@@ -58,7 +56,10 @@ export default class ModalComponent extends React.Component {
               placeholder="Password"
             />
             <br />
-            <button className="submitButton" onClick={this.handleJoinSubmit}>
+            <button
+              className="submitButton hvr-grow"
+              onClick={this.handleJoinSubmit}
+            >
               Submit
             </button>
             <h1>
