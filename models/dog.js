@@ -59,13 +59,11 @@ module.exports = function(Sequelize, DataTypes) {
     },
     review_id: {
       type: DataTypes.INTEGER
-    },
-
-
+    }
   });
   Dog.associate = function(models) {
     Dog.hasMany(models.Review);
-};
+  };
 
   Dog.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
