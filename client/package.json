@@ -18,6 +18,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-star-rating-component": "^1.4.1",
+    "react-validation": "^3.0.7",
     "s3-uploader-react": "^0.1.4-alpha"
   },
   "scripts": {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Reviews.css";
-
+import API from "../../utils/API";
 class Reviews extends React.Component {
   constructor() {
     super();
@@ -37,12 +37,15 @@ class Reviews extends React.Component {
     );
   } // end render
 
-  _addComment(author, body) {
+  _addComment(reviewer, review) {
     const comment = {
       id: this.state.comments.length + 1,
-      author,
-      body
+      reviewer,
+      review
     };
+    API.review({ reviewer: reviewer, review: review }).then(response => {
+      console.log(response);
+    });
     this.setState({ comments: this.state.comments.concat([comment]) }); // *new array references help React stay fast, so concat works better than push here.
   }
 
@@ -55,7 +58,11 @@ class Reviews extends React.Component {
   _getComments() {
     return this.state.comments.map(comment => {
       return (
-        <Comment author={comment.author} body={comment.body} key={comment.id} />
+        <Comment
+          reviewer={comment.reviewer}
+          review={comment.review}
+          key={comment.id}
+        />
       );
     });
   }
@@ -78,7 +85,7 @@ class CommentForm extends React.Component {
         <div className="comment-form-fields">
           <input
             className="reviewName"
-            placeholder="Name"
+            placeholder=" Dog's Name"
             required
             ref={input => (this._author = input)}
           />
@@ -88,7 +95,7 @@ class CommentForm extends React.Component {
             placeholder="Review"
             rows="4"
             required
-            ref={textarea => (this._body = textarea)}
+            ref={textarea => (this._review = textarea)}
           />
         </div>
         <div className="comment-form-actions">
@@ -102,9 +109,9 @@ class CommentForm extends React.Component {
 
   _handleSubmit(event) {
     event.preventDefault(); // prevents page from reloading on submit
-    let author = this._author;
-    let body = this._body;
-    this.props.addComment(author.value, body.value);
+    let reviewer = this._author;
+    let review = this._review;
+    this.props.addComment(reviewer.value, review.value);
   }
 } // end CommentForm component
 
@@ -112,7 +119,7 @@ class Comment extends React.Component {
   render() {
     return (
       <div className="comment">
-        <p className="comment-header">{this.props.author}</p>
+        <p className="comment-header">{this.props.reviewer}</p>
         <p className="comment-body">- {this.props.body}</p>
         <div className="comment-footer" />
       </div>

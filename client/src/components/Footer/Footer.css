@@ -5,10 +5,8 @@ footer {
   padding: 20px;
   height: "40px";
   width: "100%";
-  position: relative;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  flex: 1;
+  margin-top: 30px;
 }
 
 .footer-link {
@@ -32,3 +30,8 @@ footer {
   max-width: 300px;
   max-height: 150px;
 }
+
+/* sticky footer */
+/* display: flex;
+    min-height: 100vh;
+    flex-direction: column; */

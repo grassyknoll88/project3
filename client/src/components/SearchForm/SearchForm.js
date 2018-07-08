@@ -59,9 +59,12 @@ export default class SearchForm extends React.Component {
             selectedItem
           }) => (
             <div>
-              <label {...getLabelProps()}>Enter a state</label>
-              <input {...getInputProps()} />
-              <ul {...getMenuProps()}>
+              <label class="stateLabel" {...getLabelProps()}>
+                Enter a state
+              </label>
+              <br />
+              <input class="stateInput" {...getInputProps()} />
+              <ul class="options" {...getMenuProps()}>
                 {isOpen
                   ? this.state.items
                       .filter(
@@ -75,7 +78,9 @@ export default class SearchForm extends React.Component {
                             item,
                             style: {
                               backgroundColor:
-                                highlightedIndex === index ? "red" : "white",
+                                highlightedIndex === index
+                                  ? "whitesmoke"
+                                  : "white",
                               fontWeight:
                                 selectedItem === item ? "bold" : "normal"
                             }
@@ -93,6 +98,7 @@ export default class SearchForm extends React.Component {
         {this.state.results.map((results, i) => (
           <DogCards
             key={i}
+            id={results.id}
             pet_name={results.pet_name}
             breed={results.breed}
             city={results.city}

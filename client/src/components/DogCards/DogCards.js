@@ -10,15 +10,20 @@ import {
 import "./DogCards.css";
 
 const DogCards = props => {
+  console.log("PROPS: ", props);
+  const cardStyle = {
+    borderRadius: "25px"
+  };
+
   return (
     <div className="cardDiv">
-      <Card>
+      <Card style={cardStyle}>
         <CardImage src={props.imgurl} />
         <CardBody>
           <CardTitle>{props.pet_name}</CardTitle>
           <h5>{props.breed}</h5>
           <CardText>{props.city}</CardText>
-          <Button href="#">Button</Button>
+          <Button href={"/profile/" + props.id}>Profile</Button>
         </CardBody>
       </Card>
     </div>

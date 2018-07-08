@@ -3,14 +3,19 @@ import ReactDOM from "react-dom";
 import Modal from "react-responsive-modal";
 import { Container, Row, Col, Input, Button } from "mdbreact";
 import "./Modal.css";
+import { Redirect } from "react-router-dom";
 
 export default class ModalComponent extends React.Component {
   state = {
-    open: false
+    open: false,
+    submitted: false
   };
 
   onOpenModal = () => {
     this.setState({ open: true });
+  };
+  handleJoinSubmit = () => {
+    this.setState({ submitted: true });
   };
 
   onCloseModal = () => {
@@ -19,12 +24,17 @@ export default class ModalComponent extends React.Component {
 
   render() {
     const { open } = this.state;
+    let redirect = null;
+    if (this.state.submitted) {
+      redirect = <Redirect to="/profile" />;
+    }
     return (
       <div>
         <button id="joinUs" className="btn hvr-grow" onClick={this.onOpenModal}>
           JOIN US
         </button>
         <Modal open={open} onClose={this.onCloseModal} center>
+          {redirect}
           <form className="form">
             <input
               className="usernameInput"
@@ -46,7 +56,10 @@ export default class ModalComponent extends React.Component {
               placeholder="Password"
             />
             <br />
-            <button className="submitButton" onClick={this.handleFormSubmit}>
+            <button
+              className="submitButton hvr-grow"
+              onClick={this.handleJoinSubmit}
+            >
               Submit
             </button>
             <h1>

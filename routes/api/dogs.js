@@ -1,8 +1,8 @@
-// var express = require("express");
-var router = require("express").Router();
+// const express = require("express");
+const router = require("express").Router();
 // grabbing our models
-var db = require("../../models");
-var passport = require("../../config/passport");
+const db = require("../../models");
+const passport = require("../../config/passport");
 
 module.exports = function(app) {
   // get route, edited to match sequelize
@@ -11,14 +11,12 @@ module.exports = function(app) {
     db.Dog.findAll({
       //attributes that will not reflect on the dog card on the search page
       attributes: {
+
         exclude: [
           "password",       
-          "id",
-          "email",
-          "createdAt",
-          "updatedAt",
-          "review_id"
+
         ]
+
       },
       order: [["state"]]
     })
@@ -51,7 +49,8 @@ module.exports = function(app) {
   //route for reviews
   app.post("/api/review", function(req, res) {
     db.Review.create({
-      id:req.body.id,
+      id: req.body.id,
+      reviewer: req.body.reviewer,
       dog_id: req.body.dog_id,
       review: req.body.review
     }).then(function(dbDog) {
@@ -59,9 +58,35 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+
+    // PUT route for updating dogs. We can get the updated dog data from req.body
+    app.put("/api/update", function(req, res) {
+      // Update takes in an object describing the properties we want to update, and
+      // we use where to describe which objects we want to update
+      db.Dog.update({
+        username: req.body.username,
+        password: req.body.password,
+        pet_name: req.body.pet_name,
+        breed: req.body.breed,
+        city: req.body.city,
+        state: req.body.state,
+        description: req.body.description,
+        email: req.body.email,
+        imgurl: req.body.imgurl
+      }, {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbDog) {
+        res.json(dbDog);
+      });
+    });
   
+
+
+
   //route for login
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("jwt"), function(req, res) {
     db.Dog.findOne({
       email: req.body.email,
       password: req.body.password
@@ -70,15 +95,16 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/profile", function(req, res) {
+  app.get("/api/profile/:id", function(req, res) {
     db.Dog.findOne({
-      where: { id: id }
+      attributes: {
+        exclude: ["password"]
+      },
+      where: { id: req.params.id }
+    }).then(function(dbDog) {
+      res.json(dbDog);
     });
   });
 
+};
 
-}
-
-
-
-//doing nothing just trying to push to github

@@ -26,7 +26,14 @@ module.exports = function(Sequelize, DataTypes) {
     },
     state: {
       type: DataTypes.STRING,
-      notEmpty: true
+      isUpperCase: true,
+      notEmpty: true,
+      validate: {
+        len: [2,2],
+   
+        
+        // isPostalCode: true
+      }
     },
 
     breed: {
@@ -52,13 +59,11 @@ module.exports = function(Sequelize, DataTypes) {
     },
     review_id: {
       type: DataTypes.INTEGER
-    },
-
-
+    }
   });
   Dog.associate = function(models) {
     Dog.hasMany(models.Review);
-};
+  };
 
   Dog.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);

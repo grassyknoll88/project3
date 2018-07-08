@@ -1,3 +1,23 @@
-.input-group.md-form.form-sm.form-2 input.amber-border {
-  border: 1px solid #f7c331;
+.stateInput {
+  width: 40%;
+  height: 30px;
+  margin-left: 490px;
+  font-size: 25px;
+  color: #f7882f;
+  border: #f7c331 solid 1px;
+}
+
+.stateLabel {
+  font-size: 40px;
+  padding-left: 750px;
+  color: #f7882f;
+}
+
+.options {
+  background-color: white;
+  color: black;
+  font-size: 25px;
+  width: 40%;
+  padding-left: 490px;
+  color: #f7882f;
 }
