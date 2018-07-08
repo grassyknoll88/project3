@@ -11,7 +11,7 @@ module.exports = function(Sequelize, DataTypes) {
     }
   });
   Chat.associate = function(models) {
-    Chat.hasMany(models.Messages);
+    // Chat.hasMany(models.Messages);
   };
 
   return Chat;
