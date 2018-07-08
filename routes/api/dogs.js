@@ -25,7 +25,7 @@ module.exports = function(app) {
         res.json(dbDog);
       });
   });
-
+//________________________________________________________________________________________________
   // post route to create dogs
   app.post("/api/signup", function(req, res) {
     //or api/users
@@ -45,6 +45,7 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+  //________________________________________________________________________________________________
 
   //route for reviews
   app.post("/api/review", function(req, res) {
