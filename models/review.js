@@ -1,4 +1,5 @@
 module.exports = function(Sequelize, DataTypes) {
+
   var Review = Sequelize.define("Review", {
     id: {
       autoIncrement: true,
@@ -29,4 +30,5 @@ module.exports = function(Sequelize, DataTypes) {
     });
   };
   return Review;
+
 };
