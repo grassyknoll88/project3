@@ -3,6 +3,7 @@ import React from "react";
 import HeroPic from "../components/HeroPic";
 import InfoBoxes from "../components/InfoBoxes/InfoBoxes";
 import ModalComponent from "../components/Modal/Modal";
+import ModalPage from "../components/MessagingModal/MessagingModal";
 
 const Home = () => (
   <div className="container-fluid">
@@ -15,6 +16,7 @@ const Home = () => (
           {/* <JoinButton /> */}
           <ModalComponent />
         </HeroPic>
+        <ModalPage />
       </div>
     </div>
     <InfoBoxes />
