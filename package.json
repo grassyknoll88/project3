@@ -20,9 +20,9 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "@pusher/chatkit": "^0.7.16",
     "bcrypt-nodejs": "^0.0.3",
     "bcryptjs": "^2.4.3",
-    "@pusher/chatkit": "^0.7.16",
     "body-parser": "^1.17.2",
     "downshift": "^2.0.10",
     "express": "^4.16.3",
