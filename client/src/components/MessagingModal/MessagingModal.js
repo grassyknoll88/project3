@@ -22,7 +22,7 @@ class ModalPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      roomId: null,
+      roomId: "11293353",
       messages: [],
       joinableRooms: [],
       joinedRooms: [],
@@ -39,7 +39,7 @@ class ModalPage extends React.Component {
     // const loggedInUser = this.state.User.username;
     const chatManager = new Chatkit.ChatManager({
       instanceLocator,
-      userId: "bknoll66",
+      userId: "KileyA",
       tokenProvider: new Chatkit.TokenProvider({
         url: tokenUrl
       })
