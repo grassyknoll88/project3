@@ -55,6 +55,7 @@ body {
   padding: 10px;
   background-color: #6b7a8f;
   overflow: scroll;
+  overflow: hidden;
   height: 100%;
 }
 
@@ -146,6 +147,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: scroll;
+  overflow: hidden;
   background: var(--secondary-color);
 }
 
