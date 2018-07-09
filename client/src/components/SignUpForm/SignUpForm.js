@@ -3,23 +3,21 @@ import "./SignUpForm.css";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import API from "../../utils/API";
 import { Redirect } from "react-router-dom";
-import validator from 'validator';
-import Form from 'react-validation/build/form';
-import Input from 'react-validation/build/input';
+import validator from "validator";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
 
-
-const required = (value) => {
+const required = value => {
   if (!value.toString().trim().length) {
-
-    return 'require';
+    return "require";
   }
 };
 
-const email = (value) => {
-  if(!validator.isEmail(value)) {
-    return `${value} is not a valid email.`
+const email = value => {
+  if (!validator.isEmail(value)) {
+    return `${value} is not a valid email.`;
   }
-}; 
+};
 
 class SignUpForm extends Component {
   // Setting the component's initial state
@@ -71,10 +69,10 @@ class SignUpForm extends Component {
     }
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
-      <div>
+      <div className="searchForm">
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
         <div className="container">
-        {redirect}
+          {redirect}
           <Form className="form">
             <Input
               value={this.state.email}

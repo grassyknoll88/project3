@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row, Footer } from "mdbreact";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import Mailto from "react-protected-mailto";
 
 class FooterPage extends React.Component {
   render() {
@@ -31,7 +32,7 @@ class FooterPage extends React.Component {
                   </Link>
                 </li>
                 <li className="nav-item active nav-link footer-link nav-item">
-                  <a href="puplifeku@gmail.com">Contact Us</a>
+                  <Mailto className="emailLink" email="puplifeku@gmail.com" />
                 </li>
                 <li
                   className={
