@@ -6,7 +6,6 @@ footer {
   height: "40px";
   width: "100%";
   flex: 1;
-  margin-top: 30px;
 }
 
 .footer-link {
@@ -19,6 +18,19 @@ footer {
 
 .linkDiv {
   margin-top: 35px;
+}
+
+.emailLink {
+  font-size: 0;
+}
+
+.emailLink:after {
+  content: "sU tcatnoC";
+  font-size: 18px;
+}
+
+.emailLink:hover {
+  color: #f7882f;
 }
 
 .footer-text {

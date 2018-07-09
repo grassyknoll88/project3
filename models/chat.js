@@ -10,9 +10,11 @@ module.exports = function(Sequelize, DataTypes) {
       notEmpty: true
     }
   });
+
   // Chat.associate = function(models) {
   //   Chat.hasMany(models.Messages);
   // };
+=======
 
   return Chat;
 };
