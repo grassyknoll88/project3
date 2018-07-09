@@ -21,3 +21,10 @@
   padding-left: 490px;
   color: #f7882f;
 }
+
+.searchDiv {
+  display: flex;
+  min-height: 61vh;
+  flex-direction: column;
+  margin-bottom: 45px;
+}

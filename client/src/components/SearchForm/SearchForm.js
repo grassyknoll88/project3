@@ -43,7 +43,7 @@ export default class SearchForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="searchDiv">
         <Downshift
           onChange={selection => this.handleSelection(selection)}
           itemToString={item => (item ? item.state : "")}
