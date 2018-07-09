@@ -23,7 +23,7 @@ passport.use(
       // When a user tries to sign in this code runs
       db.Dog.findOne({
         where: {
-          username: username
+          id: jwt_payload.id
         }
       })
         .then(function (dbUser) {

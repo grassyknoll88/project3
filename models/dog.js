@@ -1,4 +1,5 @@
-var bcrypt = require("bcrypt-nodejs");
+//var bcrypt = require("bcrypt-nodejs");
+// const bcrypt = require('bcryptjs');
 
 module.exports = function(Sequelize, DataTypes) {
   var Dog = Sequelize.define("Dog", {
@@ -60,16 +61,18 @@ module.exports = function(Sequelize, DataTypes) {
     review_id: {
       type: DataTypes.INTEGER
     }
+    
+
   });
   Dog.associate = function(models) {
     Dog.hasMany(models.Review);
   };
 
-  Dog.prototype.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
-  };
-  Dog.hook("beforeCreate", function(Dog) {
-    Dog.password = bcrypt.hashSync(Dog.password, bcrypt.genSaltSync(10), null);
-  });
+  // Dog.prototype.validPassword = function(password) {
+  //   return bcrypt.compareSync(password, this.password);
+  // };
+  // Dog.hook("beforeCreate", function(Dog) {
+  //   Dog.password = bcrypt.hashSync(Dog.password, bcrypt.genSaltSync(10), null);
+  // });
   return Dog;
 };
