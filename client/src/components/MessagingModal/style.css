@@ -216,10 +216,7 @@ body {
   font-size: 34px;
 }
 
-/* #messageInput,
-#contactInput {
-  width: 100%;
-  display: table;
-  height: 35px;
-  display: table-row;
-} */
+#messageInput {
+  width: 375px;
+  height: 45px;
+}
