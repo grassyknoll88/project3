@@ -18,6 +18,7 @@ input[type="password"] {
 .signUpPageTitle {
   font-size: 40px;
   padding-top: 50px;
+  color: #6b7a8f;
 }
 
 .searchForm {
