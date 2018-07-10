@@ -23,7 +23,9 @@ const DogCards = props => {
           <CardTitle>{props.pet_name}</CardTitle>
           <h5>{props.breed}</h5>
           <CardText>{props.city}</CardText>
-          <Button href={"/profile/" + props.id}>Profile</Button>
+          <Button id="btnToProfile" href={"/profile/" + props.id}>
+            Profile
+          </Button>
         </CardBody>
       </Card>
     </div>

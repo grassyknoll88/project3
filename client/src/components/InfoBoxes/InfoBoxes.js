@@ -27,6 +27,7 @@ const InfoBoxes = props => (
             src="/assets/dogfriends.jpg"
             alt="dogfriends"
             className="dogspic"
+            id="twoDogs"
             height="600"
             width="400"
           />

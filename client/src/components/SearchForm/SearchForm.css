@@ -1,5 +1,5 @@
 .stateInput {
-  width: 40%;
+  width: 75%;
   height: 30px;
   margin-left: 490px;
   font-size: 25px;
@@ -20,4 +20,10 @@
   width: 40%;
   padding-left: 490px;
   color: #f7882f;
+}
+
+.searchDiv {
+  display: inline-block;
+  min-height: 61vh;
+  margin-bottom: 45px;
 }

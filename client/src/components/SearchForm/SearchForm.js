@@ -34,7 +34,7 @@ export default class SearchForm extends React.Component {
   }
 
   handleSelection(selectedVal) {
-    alert(`You selected ${selectedVal.state}`);
+    // alert(`You selected ${selectedVal.state}`);
     let results = this.state.dogs.filter(dog => {
       return dog.state.toLowerCase() === selectedVal.state.toLowerCase();
     });
@@ -43,7 +43,7 @@ export default class SearchForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="searchDiv">
         <Downshift
           onChange={selection => this.handleSelection(selection)}
           itemToString={item => (item ? item.state : "")}
