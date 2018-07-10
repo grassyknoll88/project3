@@ -13,7 +13,7 @@ import ModalPage from "../MessagingModal/MessagingModal";
 class ProfilePage extends Component {
   render() {
     return (
-      <Card className="dogCard" reverse>
+      <Card className="dogCard" id="dCard" reverse>
         <CardImage className="img-fluid profileImg" src={this.props.imgurl} />
         <ModalPage />
         <CardBody>

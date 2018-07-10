@@ -6,6 +6,10 @@
   border-radius: 25px;
 }
 
+#dCard {
+  border-radius: 25px;
+}
+
 #petName {
   font-size: 60px;
   color: #6b7a8f;
@@ -24,6 +28,6 @@
 }
 
 .view {
-  background-color: rgba(251, 231, 172, 0.2);
+  background-image: url("../../assets/wov.png");
   border-radius: 25px;
 }
