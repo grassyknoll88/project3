@@ -18,7 +18,7 @@ img {
 }
 
 #btnToProfile {
-  background-color: #f7882f;
+  background-color: #f7882f !important;
   color: white;
   font-size: 20px;
 }
