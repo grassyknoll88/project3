@@ -43,9 +43,11 @@ class Reviews extends React.Component {
       reviewer,
       review
     };
-    API.review({ reviewer: reviewer, review: review }).then(response => {
-      console.log(response);
-    });
+    API.review({ reviewer: reviewer, dog_id: dog_id, review: review }).then(
+      response => {
+        console.log(response);
+      }
+    );
     this.setState({ comments: this.state.comments.concat([comment]) }); // *new array references help React stay fast, so concat works better than push here.
   }
 
@@ -85,7 +87,7 @@ class CommentForm extends React.Component {
         <div className="comment-form-fields">
           <input
             className="reviewName"
-            placeholder=" User Name"
+            placeholder=" Users Name"
             required
             ref={input => (this._author = input)}
           />
