@@ -16,7 +16,6 @@ const Home = () => (
           {/* <JoinButton /> */}
           <ModalComponent />
         </HeroPic>
-        <ModalPage />
       </div>
     </div>
     <InfoBoxes />

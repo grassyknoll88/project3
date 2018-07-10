@@ -20,9 +20,10 @@
 .profileImg {
   display: block;
   margin: auto;
+  border-radius: 25px;
 }
 
 .view {
-  background-color: rgba(247, 195, 49, 0.65);
+  background-color: rgba(251, 231, 172, 0.2);
   border-radius: 25px;
 }
