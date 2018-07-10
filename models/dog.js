@@ -28,13 +28,12 @@ module.exports = function(Sequelize, DataTypes) {
     state: {
       type: DataTypes.STRING,
       isUpperCase: true,
-      notEmpty: true,
-      validate: {
-        len: [2,2],
-   
-        
-        // isPostalCode: true
-      }
+      notEmpty: true
+      // validate: {
+      //   len: [2,2],
+
+      //   // isPostalCode: true
+      // }
     },
 
     breed: {
@@ -61,8 +60,6 @@ module.exports = function(Sequelize, DataTypes) {
     review_id: {
       type: DataTypes.INTEGER
     }
-    
-
   });
   Dog.associate = function(models) {
     Dog.hasMany(models.Review);
