@@ -54,7 +54,7 @@ app.post("/api/signup", function(req, res) {
 });
 
 
-  // post route to create a new user
+  // post route to create a new user from signup form
   app.post("/api/register", (function (req, res) {
     db.Dog.findOne({
       where: {
