@@ -2,7 +2,9 @@
 const router = require("express").Router();
 // grabbing our models
 const db = require("../../models");
+const bcrypt = require("bcryptjs");
 const passport = require("../../config/passport");
+const Passport = require ("passport");
 
 module.exports = function(app) {
   // get route, edited to match sequelize
@@ -23,7 +25,6 @@ module.exports = function(app) {
 
   // post route to create dogs
   app.post("/api/signup", function(req, res) {
-    //or api/users
     db.Dog.create({
       id: req.body.id,
       username: req.body.username,
@@ -81,7 +82,7 @@ module.exports = function(app) {
   });
 
   //route for login
-  app.post("/api/login", passport.authenticate("jwt"), function(req, res) {
+  app.post("/api/login", Passport.authenticate("local-signin"), function(req, res) {
     db.Dog.findOne({
       email: req.body.email,
       password: req.body.password
@@ -90,7 +91,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/profile/:id", function(req, res) {
+  app.get("/api/profile/:id",Passport.authenticate("local-profile"),  function(req, res) {
     db.Dog.findOne({
       attributes: {
         exclude: ["password"]

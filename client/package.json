@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@pusher/chatkit": "^0.7.16",
     "axios": "^0.18.0",
     "downshift": "^2.0.10",
     "firebase": "^5.2.0",
