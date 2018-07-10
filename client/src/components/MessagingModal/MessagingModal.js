@@ -22,7 +22,7 @@ class ModalPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      roomId: null,
+      roomId: "11293353",
       messages: [],
       joinableRooms: [],
       joinedRooms: [],
@@ -142,7 +142,7 @@ class ModalPage extends React.Component {
               disabled={!this.state.roomId}
               sendMessage={this.sendMessage}
             />
-            <NewRoomForm createRoom={this.createRoom} />
+            {/* <NewRoomForm createRoom={this.createRoom} /> */}
           </ModalFooter>
         </Modal>
       </Container>
