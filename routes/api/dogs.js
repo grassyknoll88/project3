@@ -32,9 +32,30 @@ module.exports = function (app) {
         res.json(dbDog);
       });
   });
-  //________________________________________________________________________________________________
-  // post route to create dogs
-  app.post("/api/signup", (function (req, res) {
+ 
+// post route to create dogs (for cards)
+app.post("/api/signup", function(req, res) {
+  //or api/users
+  db.Dog.create({
+    id: req.body.id,
+    username: req.body.username,
+    password: req.body.password,
+    pet_name: req.body.pet_name,
+    breed: req.body.breed,
+    city: req.body.city,
+    state: req.body.state,
+    description: req.body.description,
+    email: req.body.email,
+    imgurl: req.body.imgurl
+  }).then(function(dbDog) {
+    console.log(dbDog);
+    res.json(dbDog);
+  });
+});
+
+
+  // post route to create a new user
+  app.post("/api/register", (function (req, res) {
     db.Dog.findOne({
       where: {
         username: req.body.username
