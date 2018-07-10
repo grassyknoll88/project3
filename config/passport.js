@@ -1,6 +1,6 @@
 const passport = require("passport");
 //const LocalStrategy = require("passport-local").Strategy;
-//const bcrypt = require("bcrypt-nodejs");
+const bcrypt = require("bcryptjs");
 const JwtStrategy = require ("passport-jwt").Strategy;
 const ExtractJwt = require ("passport-jwt").ExtractJwt;
 const jwt = require("jsonwebtoken");
