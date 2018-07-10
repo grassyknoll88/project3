@@ -85,7 +85,7 @@ class CommentForm extends React.Component {
         <div className="comment-form-fields">
           <input
             className="reviewName"
-            placeholder=" Dog's Name"
+            placeholder=" User Name"
             required
             ref={input => (this._author = input)}
           />
