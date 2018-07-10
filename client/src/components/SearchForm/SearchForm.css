@@ -1,7 +1,7 @@
 .stateInput {
-  width: 75%;
+  width: auto;
   height: 30px;
-  margin-left: 490px;
+  margin-left: 625px;
   font-size: 25px;
   color: #f7882f;
   border: #f7c331 solid 1px;
@@ -9,7 +9,7 @@
 
 .stateLabel {
   font-size: 40px;
-  padding-left: 750px;
+  padding-left: 650px;
   color: #f7882f;
 }
 
@@ -18,7 +18,7 @@
   color: black;
   font-size: 25px;
   width: 40%;
-  padding-left: 490px;
+  margin-left: 625px;
   color: #f7882f;
 }
 
