@@ -30,7 +30,7 @@ module.exports = function(Sequelize, DataTypes) {
       isUpperCase: true,
       notEmpty: true
       // validate: {
-      //   len: [2,2],
+      //   len: [2,2]
 
       //   // isPostalCode: true
       // }
@@ -65,11 +65,11 @@ module.exports = function(Sequelize, DataTypes) {
     Dog.hasMany(models.Review);
   };
 
-  // Dog.prototype.validPassword = function(password) {
-  //   return bcrypt.compareSync(password, this.password);
-  // };
-  // Dog.hook("beforeCreate", function(Dog) {
-  //   Dog.password = bcrypt.hashSync(Dog.password, bcrypt.genSaltSync(10), null);
-  // });
+  Dog.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+  };
+  Dog.hook("beforeCreate", function(Dog) {
+    Dog.password = bcrypt.hashSync(Dog.password, bcrypt.genSaltSync(10), null);
+  });
   return Dog;
 };
