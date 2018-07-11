@@ -1,5 +1,5 @@
 //var bcrypt = require("bcrypt-nodejs");
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 module.exports = function(Sequelize, DataTypes) {
   var Dog = Sequelize.define("Dog", {

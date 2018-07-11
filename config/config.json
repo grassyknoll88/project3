@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": null,
+=======
+    "password": "Tricia615",
+>>>>>>> ce8da36811350d83a85c6a66d1f6454f785e3c06
     "database": "owners_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
