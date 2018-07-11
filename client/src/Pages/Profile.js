@@ -25,7 +25,7 @@ class Profile extends Component {
           imgurl={this.state.profile.imgurl}
         />
         <Reviews
-          dog_id={this.state.profile.dog_id}
+          // dog_id={this.state.profile.dog_id}
           review={this.state.profile.review}
           reviewer={this.state.profile.reviewer}
         />
