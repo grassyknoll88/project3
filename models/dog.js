@@ -56,10 +56,10 @@ module.exports = function(Sequelize, DataTypes) {
 
     imgurl: {
       type: DataTypes.TEXT
-    },
-    review_id: {
-      type: DataTypes.INTEGER
     }
+    // review_id: {
+    //   type: DataTypes.INTEGER
+    // }
   });
   Dog.associate = function(models) {
     Dog.hasMany(models.Review);
