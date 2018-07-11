@@ -95,16 +95,18 @@ export default class SearchForm extends React.Component {
           )}
         </Downshift>
 
-        {this.state.results.map((results, i) => (
-          <DogCards
-            key={i}
-            id={results.id}
-            pet_name={results.pet_name}
-            breed={results.breed}
-            city={results.city}
-            imgurl={results.imgurl}
-          />
-        ))}
+        <div className="dogContainer">
+          {this.state.results.map((results, i) => (
+            <DogCards
+              key={i}
+              id={results.id}
+              pet_name={results.pet_name}
+              breed={results.breed}
+              city={results.city}
+              imgurl={results.imgurl}
+            />
+          ))}
+        </div>
       </div>
     );
   }
