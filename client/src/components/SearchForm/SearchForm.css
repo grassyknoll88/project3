@@ -1,7 +1,8 @@
 .stateInput {
-  width: auto;
+  width: 50%;
   height: 30px;
-  margin-left: 625px;
+  margin: auto;
+  display: block;
   font-size: 25px;
   color: #f7882f;
   border: #f7c331 solid 1px;
@@ -9,21 +10,29 @@
 
 .stateLabel {
   font-size: 40px;
-  padding-left: 650px;
   color: #f7882f;
+  text-align: center;
+  display: block;
 }
 
 .options {
   background-color: white;
   color: black;
   font-size: 25px;
-  width: 40%;
-  margin-left: 625px;
+  width: 50%;
+  margin: auto;
   color: #f7882f;
 }
 
 .searchDiv {
-  display: inline-block;
+  display: block;
   min-height: 61vh;
   margin-bottom: 45px;
+}
+
+.dogContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0 120px 0;
 }
