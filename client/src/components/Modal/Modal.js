@@ -4,18 +4,43 @@ import Modal from "react-responsive-modal";
 import { Container, Row, Col, Input, Button } from "mdbreact";
 import "./Modal.css";
 import { Redirect } from "react-router-dom";
+import API from "../../utils/API";
 
 export default class ModalComponent extends React.Component {
   state = {
     open: false,
-    submitted: false
+    submitted: false,
+    username: "",
+    password: ""
+
+  };
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
   };
 
   onOpenModal = () => {
     this.setState({ open: true });
   };
-  handleJoinSubmit = () => {
-    this.setState({ submitted: true });
+  handleJoinSubmit = (event) => {
+    event.preventDefault();
+    API.login({
+      username: this.state.username,
+      password: this.state.password
+    }).then(res => {
+      console.log("login succcessful", res.data);
+      //need to use react router to change the route in the app
+      // /profile/res.data.id
+    }
+
+    )
+
   };
 
   onCloseModal = () => {
