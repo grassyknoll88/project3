@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-responsive-modal";
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Container, Row, Col, Input, Button } from "mdbreact";
 import "./Modal.css";
-import { Redirect } from "react-router-dom";
+
 import API from "../../utils/API";
 
 export default class ModalComponent extends React.Component {
@@ -35,6 +36,7 @@ export default class ModalComponent extends React.Component {
       password: this.state.password
     }).then(res => {
       console.log("login succcessful", res.data);
+     history.push('/profile/res.data.id'+ res.data.id)
       //need to use react router to change the route in the app
       // /profile/res.data.id
     }
@@ -49,17 +51,13 @@ export default class ModalComponent extends React.Component {
 
   render() {
     const { open } = this.state;
-    let redirect = null;
-    if (this.state.submitted) {
-      redirect = <Redirect to="/profile" />;
-    }
+    
     return (
       <div>
         <button id="joinUs" className="btn hvr-grow" onClick={this.onOpenModal}>
           JOIN US
         </button>
         <Modal open={open} onClose={this.onCloseModal} center>
-          {redirect}
           <form className="form">
             <input
               className="usernameInput"
