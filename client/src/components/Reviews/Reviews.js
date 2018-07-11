@@ -43,7 +43,7 @@ class Reviews extends React.Component {
       id: this.state.comments.length + 1,
       reviewer,
       review,
-      dog_id
+      //dog_id
     };
     API.review({ reviewer: reviewer, review: review }).then(response => {
       console.log(response);
