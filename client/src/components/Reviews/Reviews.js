@@ -38,18 +38,16 @@ class Reviews extends React.Component {
     );
   } // end render
 
-  _addComment(reviewer, review, dog_id) {
+  _addComment(reviewer, review) {
     const comment = {
       id: this.state.comments.length + 1,
       reviewer,
       review,
       dog_id
     };
-    API.review({ reviewer: reviewer, dog_id: dog_id, review: review }).then(
-      response => {
-        console.log(response);
-      }
-    );
+    API.review({ reviewer: reviewer, review: review }).then(response => {
+      console.log(response);
+    });
 
     this.setState({ comments: this.state.comments.concat([comment]) }); // *new array references help React stay fast, so concat works better than push here.
   }
@@ -66,7 +64,6 @@ class Reviews extends React.Component {
         <Comment
           reviewer={comment.reviewer}
           review={comment.review}
-          dog_id={comment.dog_id}
           key={comment.id}
         />
       );
