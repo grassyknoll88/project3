@@ -24,7 +24,7 @@ The backend primarly utalizes ES5
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Deployed on Heroku at: 
 
 ## Contributing
 
