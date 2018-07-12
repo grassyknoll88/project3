@@ -2,19 +2,11 @@
 
 A social media network for you and your pup!
 
+(screenshot)
 
+## MERN App
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+This fullstack app allows new users to communicate and share details of their dog.  Upon signup, the user's information is captured in MySQL database.  The front end creates,updates and pulls data to and from the API.  
 
 ### Installing
 
