@@ -17,6 +17,7 @@ class SignUp extends Component {
       .then(response => {
         console.log(response);
         //send to profile page
+        this.props.history.push(`/profile/${response.data.id}`);
       })
       .catch(err => {
         console.log(err);
@@ -26,7 +27,7 @@ class SignUp extends Component {
   render() {
     return (
       <Container>
-        <SignUpForm onFormSubmit={this.onSignUpSubmit} />
+        <SignUpForm onFormSubmit={this.onSignUpSubmit.bind(this)} />
       </Container>
     );
   }

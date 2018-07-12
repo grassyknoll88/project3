@@ -4,11 +4,14 @@ import ProfilePage from "../components/ProfilePage/ProfilePage";
 import API from "../utils/API";
 
 class Profile extends Component {
-  state = { profile: {} };
+  state = {
+    profile: {}
+  }
 
   componentDidMount() {
+    const self = this;
     API.getProfile(this.props.match.params.id).then(response => {
-      this.setState({
+      self.setState({
         profile: response.data
       });
     });
