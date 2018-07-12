@@ -33,7 +33,6 @@ class SignUpForm extends Component {
     email: "",
     imgUrl: "",
 
-    submitted: false
   };
 
   handleInputChange = event => {
@@ -49,12 +48,25 @@ class SignUpForm extends Component {
   };
 
   handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    this.props.onFormSubmit({
-      ...this.state
+    
+    API.signup({
+      username: this.state.username,
+      password: this.state.password,
+      pet_name: this.state.pet_name,
+      state: this.state.state,
+      city: this.state.city,
+      breed: this.state.breed,
+      size: this.state.size,
+      description: this.state.description,
+      email: this.state.email,
+      imgUrl: this.state.imgurl
+    }).then(res => {
+      console.log("signup successful", res.data);
+      window.location.pathname = `/profile/${res.data.id}`;
+
+      
     });
-    this.setState({ submitted: true });
   };
 
   onComplete = imgurl => {
@@ -63,16 +75,11 @@ class SignUpForm extends Component {
   };
 
   render() {
-    let redirect = null;
-    if (this.state.submitted) {
-      redirect = <Redirect to="/profile" />;
-    }
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div className="searchForm">
         <h1 className="signUpPageTitle">Create Your Profile Below: </h1>
         <div className="container">
-          {redirect}
           <Form className="form">
             <Input
               value={this.state.email}

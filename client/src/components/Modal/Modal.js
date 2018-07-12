@@ -1,19 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-responsive-modal";
-import { withRouter } from "react-router";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import { withRouter } from 'react-router'
+import { BrowserRouter, Route, Redirect  } from 'react-router-dom';
 import { Container, Row, Col, Input, Button } from "mdbreact";
 import "./Modal.css";
 
 import API from "../../utils/API";
 
 export default class ModalComponent extends React.Component {
+
   state = {
     open: false,
-    submitted: false,
     username: "",
-    password: ""
+    password: "",
   };
 
   handleInputChange = event => {
@@ -29,20 +29,18 @@ export default class ModalComponent extends React.Component {
   onOpenModal = () => {
     this.setState({ open: true });
   };
-  handleJoinSubmit = event => {
+  handleJoinSubmit = (event) => {
     event.preventDefault();
+
     API.login({
       username: this.state.username,
       password: this.state.password
     }).then(res => {
-      console.log("login succcessful", res.data);
-      if (res.status === 200) {
-        this.setState({ submitted: true });
-      }
+      console.log("login successful", res.data);
+      if(res.status === 200){
+        window.location.pathname = `/profile/${res.data.id}`;
 
-      //this.props.history.push('/profile/', {username: this.state.username})
-      //need to use react router to change the route in the app
-      // /profile/res.data.id
+      }
     });
   };
 
@@ -52,17 +50,12 @@ export default class ModalComponent extends React.Component {
 
   render() {
     const { open } = this.state;
-    let redirect = null;
-    if (this.state.submitted) {
-      redirect = <Redirect to="/profile/3" />;
-    }
-
+    
     return (
       <div>
         <button id="joinUs" className="btn hvr-grow" onClick={this.onOpenModal}>
           JOIN US
         </button>
-        {redirect}
         <Modal open={open} onClose={this.onCloseModal} center>
           <form className="form">
             <input
@@ -103,5 +96,3 @@ export default class ModalComponent extends React.Component {
     );
   }
 }
-
-// ReactDOM.render(<ModalCompgonent />, document.getElementById("app"));
