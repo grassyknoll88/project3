@@ -1,61 +1,30 @@
 # PupLife
 
 A social media network for you and your pup!
-
-(screenshot)
+ 
 
 ## MERN App
 
-This fullstack app allows new users to communicate and share details of their dog.  Upon signup, the user's information is captured in MySQL database.  The front end creates,updates and pulls data to and from the API.  
+This full-stack app allows users to communicate and share details of their dog.  Upon signup, the user's information is captured in the MySQL database.  GET, POST and UPDATE routes retrieve and add new data to the databases. 
+
+Authentication allows users to access their personal profiles which displays reviews posted from previous play dates. 
 
 ### Installing
-
+To get started: git clone git@github.com:KileyAdams92/project3.git 
 The app uses several npm packages. To install these packages, navigate to the project folder and type:
 
 yarn install
 
 Make a .gitignore file and add the following lines to it. This will tell git not to track these files, and thus they won't be committed to Github.
 
-Say what the step will be
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+### coding style tests
+The front/client utalizes ES6
+The backend primarly utalizes ES5
 
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
-
-
-
 
 ## Contributing
 
